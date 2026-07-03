@@ -1,19 +1,11 @@
 import { Link } from "@tanstack/react-router";
-import logo from "../assets/logo-wms-transparent.png.asset.json";
+import wideLogo from "../assets/logo-wms-footer.png.asset.json";
 
 export function SiteFooter() {
   return (
     <footer className="mt-32 border-t border-border/60 bg-cream">
       <div className="container-prose py-16">
         <div className="grid gap-12 md:grid-cols-3">
-          <div>
-            <img src={logo.url} alt="Wieck Marketing Strategy" className="h-12 w-auto" />
-            <p className="mt-4 max-w-xs text-sm text-muted-foreground">
-              Intelligentes Marketing. Strategie, Content, KI &amp; Automatisierung —
-              pragmatisch umgesetzt.
-            </p>
-          </div>
-
           <div>
             <div className="text-xs uppercase tracking-[0.22em] text-muted-foreground">
               Navigation
@@ -49,16 +41,30 @@ export function SiteFooter() {
               <li className="text-muted-foreground">Weserstraße 217, 12047 Berlin</li>
             </ul>
           </div>
+
+          <div>
+            <div className="text-xs uppercase tracking-[0.22em] text-muted-foreground">
+              Rechtliches
+            </div>
+            <ul className="mt-4 space-y-2 text-sm">
+              <li><Link to="/impressum" className="hover:text-ochre">Impressum</Link></li>
+              <li><Link to="/datenschutz" className="hover:text-ochre">Datenschutz</Link></li>
+            </ul>
+          </div>
         </div>
 
-        <div className="mt-12 flex flex-col items-start justify-between gap-4 border-t border-border/60 pt-6 text-xs text-muted-foreground md:flex-row md:items-center">
-          <div>© {new Date().getFullYear()} Stephanie Wieck. Alle Rechte vorbehalten.</div>
-          <div className="flex gap-6">
-            <Link to="/impressum" className="hover:text-ink">Impressum</Link>
-            <Link to="/datenschutz" className="hover:text-ink">Datenschutz</Link>
+        <div className="mt-16 flex flex-col items-center gap-6 border-t border-border/60 pt-12">
+          <img
+            src={wideLogo.url}
+            alt="Wieck Marketing Strategy"
+            className="h-28 w-auto md:h-32"
+          />
+          <div className="text-xs text-muted-foreground">
+            © {new Date().getFullYear()} Stephanie Wieck. Alle Rechte vorbehalten.
           </div>
         </div>
       </div>
     </footer>
   );
 }
+

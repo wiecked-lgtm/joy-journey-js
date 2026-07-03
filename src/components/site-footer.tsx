@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import logo from "../assets/logo-wms.png.asset.json";
 
 export function SiteFooter() {
   return (
@@ -6,8 +7,8 @@ export function SiteFooter() {
       <div className="container-prose py-16">
         <div className="grid gap-12 md:grid-cols-3">
           <div>
-            <div className="font-display text-2xl text-ink">Stephanie Wieck</div>
-            <p className="mt-3 max-w-xs text-sm text-muted-foreground">
+            <img src={logo.url} alt="Wieck Marketing Strategy" className="h-12 w-auto" />
+            <p className="mt-4 max-w-xs text-sm text-muted-foreground">
               Intelligentes Marketing. Strategie, Content, KI &amp; Automatisierung —
               pragmatisch umgesetzt.
             </p>

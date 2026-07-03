@@ -1,6 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import logo from "../assets/logo-wms.png.asset.json";
 
 const nav = [
   { to: "/", label: "Home" },
@@ -15,16 +16,12 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-40 border-b border-border/60 bg-background/80 backdrop-blur-md">
       <div className="container-prose flex h-20 items-center justify-between">
-        <Link to="/" className="group flex items-center gap-3">
-          <span className="flex h-9 w-9 items-center justify-center rounded-full bg-ink text-cream font-display text-xl leading-none">
-            w
-          </span>
-          <span className="flex flex-col leading-tight">
-            <span className="font-display text-lg text-ink">Stephanie Wieck</span>
-            <span className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground">
-              Marketing Strategy
-            </span>
-          </span>
+        <Link to="/" className="flex items-center" aria-label="Wieck Marketing Strategy — Startseite">
+          <img
+            src={logo.url}
+            alt="Wieck Marketing Strategy"
+            className="h-10 w-auto md:h-12"
+          />
         </Link>
 
         <nav className="hidden items-center gap-10 md:flex">

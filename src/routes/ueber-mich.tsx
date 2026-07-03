@@ -109,6 +109,13 @@ function UeberMich() {
         </div>
       </section>
 
+      <section aria-hidden>
+        <div
+          className="h-[36vh] min-h-[280px] w-full bg-cover bg-center md:h-[48vh]"
+          style={{ backgroundImage: `url(${handsLaptop.url})` }}
+        />
+      </section>
+
       <section className="border-t border-border/60">
         <div className="container-prose flex flex-col items-start justify-between gap-6 py-16 md:flex-row md:items-center">
           <h2 className="max-w-xl font-display text-3xl text-ink md:text-4xl">

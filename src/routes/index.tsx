@@ -150,6 +150,14 @@ function Home() {
         </div>
       </section>
 
+      {/* IMAGE BAND — team workshop */}
+      <section aria-hidden>
+        <div
+          className="h-[36vh] min-h-[280px] w-full bg-cover bg-center md:h-[48vh]"
+          style={{ backgroundImage: `url(${teamWorkshop.url})` }}
+        />
+      </section>
+
       {/* CTA */}
       <section className="border-t border-border/60 bg-ink text-cream">
         <div className="container-prose py-24 md:py-32">

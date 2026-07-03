@@ -85,6 +85,13 @@ function Leistungen() {
         </div>
       </section>
 
+      <section aria-hidden>
+        <div
+          className="h-[36vh] min-h-[280px] w-full bg-cover bg-center md:h-[48vh]"
+          style={{ backgroundImage: `url(${dashboard.url})` }}
+        />
+      </section>
+
       <section className="bg-cream">
         <div className="container-prose grid gap-6 py-20 md:grid-cols-3 md:py-28">
           {packages.map((p) => (

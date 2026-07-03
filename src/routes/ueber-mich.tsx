@@ -1,5 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
+import portrait from "../assets/portrait-stephanie.jpg.asset.json";
+import handsLaptop from "../assets/hands-laptop.jpg.asset.json";
 
 export const Route = createFileRoute("/ueber-mich")({
   head: () => ({
@@ -64,6 +66,21 @@ function UeberMich() {
         </div>
       </section>
 
+      {/* Portrait */}
+      <section className="border-b border-border/60 bg-cream">
+        <div className="container-prose py-16 md:py-24">
+          <figure className="overflow-hidden rounded-2xl">
+            <img
+              src={portrait.url}
+              alt="Stephanie Wieck"
+              className="h-auto w-full object-cover"
+              loading="lazy"
+            />
+          </figure>
+        </div>
+      </section>
+
+
       <section className="bg-cream">
         <div className="container-prose grid gap-12 py-24 md:grid-cols-3 md:py-32">
           {[
@@ -90,6 +107,13 @@ function UeberMich() {
             </div>
           ))}
         </div>
+      </section>
+
+      <section aria-hidden>
+        <div
+          className="h-[36vh] min-h-[280px] w-full bg-cover bg-center md:h-[48vh]"
+          style={{ backgroundImage: `url(${handsLaptop.url})` }}
+        />
       </section>
 
       <section className="border-t border-border/60">

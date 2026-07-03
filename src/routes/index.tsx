@@ -1,6 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, ArrowUpRight, Sparkles } from "lucide-react";
-import birdsHero from "../assets/birds-hero.jpg";
+import birdsHero from "../assets/birds-flock.jpg.asset.json";
+import workspaceCoffee from "../assets/workspace-coffee.jpg.asset.json";
+import teamWorkshop from "../assets/team-workshop.jpg.asset.json";
 
 export const Route = createFileRoute("/")({
   component: Home,
@@ -24,9 +26,9 @@ function Home() {
       <section className="relative overflow-hidden">
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-0 opacity-[0.09] mix-blend-multiply"
+          className="pointer-events-none absolute inset-0 opacity-[0.16] mix-blend-multiply"
           style={{
-            backgroundImage: `url(${birdsHero})`,
+            backgroundImage: `url(${birdsHero.url})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
@@ -106,6 +108,14 @@ function Home() {
         </div>
       </section>
 
+      {/* IMAGE BAND — workspace */}
+      <section aria-hidden className="border-t border-border/60">
+        <div
+          className="h-[36vh] min-h-[280px] w-full bg-cover bg-center md:h-[52vh]"
+          style={{ backgroundImage: `url(${workspaceCoffee.url})` }}
+        />
+      </section>
+
       {/* CAPABILITIES */}
       <section className="border-t border-border/60">
         <div className="container-prose py-24 md:py-32">
@@ -138,6 +148,14 @@ function Home() {
             ))}
           </ul>
         </div>
+      </section>
+
+      {/* IMAGE BAND — team workshop */}
+      <section aria-hidden>
+        <div
+          className="h-[36vh] min-h-[280px] w-full bg-cover bg-center md:h-[48vh]"
+          style={{ backgroundImage: `url(${teamWorkshop.url})` }}
+        />
       </section>
 
       {/* CTA */}

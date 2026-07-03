@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Check, ArrowRight } from "lucide-react";
+import dashboard from "../assets/laptop-dashboard.jpg.asset.json";
 
 export const Route = createFileRoute("/leistungen")({
   head: () => ({
@@ -82,6 +83,13 @@ function Leistungen() {
             Pakete lassen sich flexibel an eure Situation anpassen.
           </p>
         </div>
+      </section>
+
+      <section aria-hidden>
+        <div
+          className="h-[36vh] min-h-[280px] w-full bg-cover bg-center md:h-[48vh]"
+          style={{ backgroundImage: `url(${dashboard.url})` }}
+        />
       </section>
 
       <section className="bg-cream">

@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import logo from "../assets/logo-wms.png.asset.json";
+import logo from "../assets/logo-wms-transparent.png.asset.json";
 
 export function SiteFooter() {
   return (

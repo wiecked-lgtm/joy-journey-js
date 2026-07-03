@@ -108,6 +108,14 @@ function Home() {
         </div>
       </section>
 
+      {/* IMAGE BAND — workspace */}
+      <section aria-hidden className="border-t border-border/60">
+        <div
+          className="h-[36vh] min-h-[280px] w-full bg-cover bg-center md:h-[52vh]"
+          style={{ backgroundImage: `url(${workspaceCoffee.url})` }}
+        />
+      </section>
+
       {/* CAPABILITIES */}
       <section className="border-t border-border/60">
         <div className="container-prose py-24 md:py-32">

@@ -26,9 +26,9 @@ function Home() {
       <section className="relative overflow-hidden">
         <div
           aria-hidden
-          className="pointer-events-none absolute inset-0 opacity-[0.09] mix-blend-multiply"
+          className="pointer-events-none absolute inset-0 opacity-[0.16] mix-blend-multiply"
           style={{
-            backgroundImage: `url(${birdsHero})`,
+            backgroundImage: `url(${birdsHero.url})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}

@@ -9,7 +9,7 @@ export const Route = createFileRoute("/leistungen")({
       {
         name: "description",
         content:
-          "Starter, Growth und Retainer — drei Pakete für den strategischen und praxisnahen Einsatz von KI in eurem Marketing.",
+          "Starter, Growth und Retainer: drei Pakete für den strategischen und praxisnahen Einsatz von KI in eurem Marketing.",
       },
       { property: "og:title", content: "Leistungen & Pakete | Stephanie Wieck" },
       {
@@ -79,7 +79,7 @@ function Leistungen() {
             <span className="italic text-ochre">Marketing</span>.
           </h1>
           <p className="mt-8 max-w-2xl text-lg text-foreground/75">
-            Ob erster Use Case, vollständiger Aufbau oder laufende Optimierung — die
+            Ob erster Use Case, vollständiger Aufbau oder laufende Optimierung: die
             Pakete lassen sich flexibel an eure Situation anpassen.
           </p>
         </div>

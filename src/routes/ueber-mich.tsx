@@ -10,7 +10,7 @@ export const Route = createFileRoute("/ueber-mich")({
       {
         name: "description",
         content:
-          "Über 15 Jahre Erfahrung an der Schnittstelle von Marketing, Kommunikation und digitalem Wachstum. Strategisch und hands-on.",
+          "Über 15 Jahre Marketing-Strategin mit Fokus auf datengetriebene Kampagnen, KI und Automatisierung.",
       },
       { property: "og:title", content: "Über mich | Stephanie Wieck" },
       {

@@ -9,7 +9,7 @@ export const Route = createFileRoute("/kontakt")({
       {
         name: "description",
         content:
-          "Kontakt zu Stephanie Wieck — erfahrene Marketing-Strategin mit Fokus auf KI und Performance. Kostenloses Erstgespräch buchen.",
+          "Kontakt zu Stephanie Wieck, erfahrene Marketing-Strategin mit Fokus auf KI und Performance. Kostenloses Erstgespräch buchen.",
       },
       { property: "og:title", content: "Kontakt | Stephanie Wieck" },
       {

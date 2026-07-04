@@ -5,13 +5,13 @@ import dashboard from "../assets/laptop-dashboard.jpg.asset.json";
 export const Route = createFileRoute("/leistungen")({
   head: () => ({
     meta: [
-      { title: "Leistungen & Pakete — Stephanie Wieck" },
+      { title: "Leistungen & Pakete | Stephanie Wieck" },
       {
         name: "description",
         content:
           "Starter, Growth und Retainer — drei Pakete für den strategischen und praxisnahen Einsatz von KI in eurem Marketing.",
       },
-      { property: "og:title", content: "Leistungen & Pakete — Stephanie Wieck" },
+      { property: "og:title", content: "Leistungen & Pakete | Stephanie Wieck" },
       {
         property: "og:description",
         content:

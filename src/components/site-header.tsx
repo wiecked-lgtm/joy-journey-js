@@ -1,7 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-import logo from "../assets/logo-wms-transparent.png.asset.json";
 
 const nav = [
   { to: "/", label: "Home" },
@@ -18,7 +17,7 @@ export function SiteHeader() {
       <div className="container-prose flex h-20 items-center justify-between">
         <Link to="/" className="flex items-center" aria-label="Wieck Marketing Strategy, Startseite">
           <img
-            src={logo.url}
+            src="/Logo_Transparent.svg"
             alt="Wieck Marketing Strategy"
             className="h-10 w-auto md:h-12"
           />

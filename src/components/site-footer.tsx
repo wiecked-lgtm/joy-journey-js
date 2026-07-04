@@ -1,5 +1,4 @@
 import { Link } from "@tanstack/react-router";
-import wideLogo from "../assets/logo-wms-footer.png.asset.json";
 
 export function SiteFooter() {
   return (
@@ -55,7 +54,7 @@ export function SiteFooter() {
 
         <div className="mt-16 flex flex-col items-center gap-6 border-t border-border/60 pt-12">
           <img
-            src={wideLogo.url}
+            src="/Logo_Wide_Transparent.svg"
             alt="Wieck Marketing Strategy"
             className="h-28 w-auto md:h-32"
           />

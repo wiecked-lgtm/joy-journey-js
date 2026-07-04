@@ -5,13 +5,13 @@ import desk from "../assets/desk-keyboards.jpg.asset.json";
 export const Route = createFileRoute("/kontakt")({
   head: () => ({
     meta: [
-      { title: "Kontakt — Stephanie Wieck" },
+      { title: "Kontakt | Stephanie Wieck" },
       {
         name: "description",
         content:
-          "Kontakt zu Stephanie Wieck — erfahrene Marketing-Strategin mit Fokus auf KI und Performance. Kostenloses Erstgespräch buchen.",
+          "Kontakt zu Stephanie Wieck, erfahrene Marketing-Strategin mit Fokus auf KI und Performance. Kostenloses Erstgespräch buchen.",
       },
-      { property: "og:title", content: "Kontakt — Stephanie Wieck" },
+      { property: "og:title", content: "Kontakt | Stephanie Wieck" },
       {
         property: "og:description",
         content:

@@ -79,8 +79,8 @@ function Home() {
             <div className="text-xs uppercase tracking-[0.22em] text-muted-foreground">
               Über mich
             </div>
-            <h2 className="mt-6 font-display text-4xl leading-tight text-ink md:text-5xl">
-              15 Jahre an der Schnittstelle von Marketing &amp; Wachstum.
+            <h2 className="mt-6 font-display text-4xl leading-[1.1] text-ink md:text-5xl">
+              Marketing, das <span className="italic text-ochre">wirkt</span>.
             </h2>
           </div>
           <div className="space-y-6 text-lg leading-relaxed text-foreground/80 md:col-span-7 md:col-start-6">
@@ -108,7 +108,7 @@ function Home() {
         </div>
       </section>
 
-      {/* IMAGE BAND — workspace */}
+      {/* IMAGE BAND - workspace */}
       <section aria-hidden className="border-t border-border/60">
         <div
           className="h-[36vh] min-h-[280px] w-full bg-cover bg-center md:h-[52vh]"
@@ -150,7 +150,7 @@ function Home() {
         </div>
       </section>
 
-      {/* IMAGE BAND — team workshop */}
+      {/* IMAGE BAND - team workshop */}
       <section aria-hidden>
         <div
           className="h-[36vh] min-h-[280px] w-full bg-cover bg-center md:h-[48vh]"

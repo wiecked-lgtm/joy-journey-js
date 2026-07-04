@@ -77,14 +77,14 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Stephanie Wieck — Intelligentes Marketing mit KI" },
+      { title: "Stephanie Wieck | Intelligentes Marketing mit KI" },
       {
         name: "description",
         content:
           "Marketing-Strategin für datengetriebene Kampagnen, KI-Workflows und Automatisierungen. 15+ Jahre Erfahrung an der Schnittstelle von Content, Performance & Wachstum.",
       },
       { name: "author", content: "Stephanie Wieck" },
-      { property: "og:title", content: "Stephanie Wieck — Intelligentes Marketing mit KI" },
+      { property: "og:title", content: "Stephanie Wieck | Intelligentes Marketing mit KI" },
       {
         property: "og:description",
         content:

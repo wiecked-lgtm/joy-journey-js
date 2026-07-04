@@ -3,12 +3,12 @@ import { createFileRoute } from "@tanstack/react-router";
 export const Route = createFileRoute("/datenschutz")({
   head: () => ({
     meta: [
-      { title: "Datenschutz — Stephanie Wieck" },
+      { title: "Datenschutz | Stephanie Wieck" },
       {
         name: "description",
         content: "Informationen zur Datenverarbeitung auf dieser Website.",
       },
-      { property: "og:title", content: "Datenschutz — Stephanie Wieck" },
+      { property: "og:title", content: "Datenschutz | Stephanie Wieck" },
       {
         property: "og:description",
         content: "Informationen zur Datenverarbeitung auf dieser Website.",

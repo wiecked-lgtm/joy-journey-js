@@ -3,9 +3,9 @@ import { createFileRoute } from "@tanstack/react-router";
 export const Route = createFileRoute("/impressum")({
   head: () => ({
     meta: [
-      { title: "Impressum — Stephanie Wieck" },
+      { title: "Impressum | Stephanie Wieck" },
       { name: "description", content: "Impressum und Anbieterkennzeichnung." },
-      { property: "og:title", content: "Impressum — Stephanie Wieck" },
+      { property: "og:title", content: "Impressum | Stephanie Wieck" },
       { property: "og:description", content: "Impressum und Anbieterkennzeichnung." },
     ],
   }),

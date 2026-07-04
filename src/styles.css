@@ -41,7 +41,7 @@
 :root {
   --radius: 0.5rem;
 
-  /* Modern, clean palette — cool off-white, near-black ink, warm signal yellow matching the logo bird */
+  /* Modern, clean palette, cool off-white, near-black ink, warm signal yellow matching the logo bird */
   --cream: oklch(0.985 0.002 250);
   --ink: oklch(0.16 0.005 250);
   --ochre: oklch(0.88 0.17 95);

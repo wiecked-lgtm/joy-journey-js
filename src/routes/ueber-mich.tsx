@@ -6,13 +6,13 @@ import handsLaptop from "../assets/hands-laptop.jpg.asset.json";
 export const Route = createFileRoute("/ueber-mich")({
   head: () => ({
     meta: [
-      { title: "Über mich — Stephanie Wieck" },
+      { title: "Über mich | Stephanie Wieck" },
       {
         name: "description",
         content:
-          "Über 15 Jahre Erfahrung an der Schnittstelle von Marketing, Kommunikation und digitalem Wachstum. Strategisch und hands-on.",
+          "Über 15 Jahre Marketing-Strategin mit Fokus auf datengetriebene Kampagnen, KI und Automatisierung.",
       },
-      { property: "og:title", content: "Über mich — Stephanie Wieck" },
+      { property: "og:title", content: "Über mich | Stephanie Wieck" },
       {
         property: "og:description",
         content:

@@ -150,7 +150,7 @@ function Home() {
         </div>
       </section>
 
-      {/* IMAGE BAND — team workshop */}
+      {/* IMAGE BAND - team workshop */}
       <section aria-hidden>
         <div
           className="h-[36vh] min-h-[280px] w-full bg-cover bg-center md:h-[48vh]"

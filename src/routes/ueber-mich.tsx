@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
-import portrait from "../portrait-stephanie";
-import handsLaptop from "../hands-laptop";
+import portrait from "../portrait-stephanie.png";
+import handsLaptop from "../hands-laptop.png";
 
 export const Route = createFileRoute("/ueber-mich")({
   head: () => ({
@@ -37,18 +37,21 @@ function UeberMich() {
               <span className="italic text-ochre">Hands-on</span> umsetzen.
             </h1>
           </div>
+
           <div className="space-y-6 text-lg leading-relaxed text-foreground/80 md:col-span-6 md:col-start-7">
             <p>
               Seit über 15 Jahren arbeite ich an der Schnittstelle von Marketing,
               Kommunikation und digitalem Wachstum. Dabei denke ich strategisch und setze
               gleichzeitig hands-on maßgeschneiderte Prozesse um.
             </p>
+
             <p>
               Ich unterstütze Unternehmen dabei, KI strategisch und praxisnah in ihr
               Marketing zu integrieren. Mein Fokus liegt auf datengetriebenem Marketing,
               Performance-Kampagnen und der Integration moderner KI- und
               Automatisierungsprozesse in bestehende Teams und Workflows.
             </p>
+
             <p>
               Weitere Informationen zu meiner über 15-jährigen Erfahrung in Management
               und Marketing findest du in meinem{" "}
@@ -71,7 +74,7 @@ function UeberMich() {
         <div className="container-prose py-16 md:py-24">
           <figure className="overflow-hidden rounded-2xl">
             <img
-              src={portrait-stephanie.png}
+              src={portrait}
               alt="Stephanie Wieck"
               className="h-auto w-full object-cover"
               loading="lazy"
@@ -79,7 +82,6 @@ function UeberMich() {
           </figure>
         </div>
       </section>
-
 
       <section className="bg-cream">
         <div className="container-prose grid gap-12 py-24 md:grid-cols-3 md:py-32">
@@ -112,7 +114,7 @@ function UeberMich() {
       <section aria-hidden>
         <div
           className="h-[36vh] min-h-[280px] w-full bg-cover bg-center md:h-[48vh]"
-          style={{ backgroundImage: `url(${hands-laptop})` }}
+          style={{ backgroundImage: `url(${handsLaptop})` }}
         />
       </section>
 
@@ -121,6 +123,7 @@ function UeberMich() {
           <h2 className="max-w-xl font-display text-3xl text-ink md:text-4xl">
             Lass uns über euer Marketing sprechen.
           </h2>
+
           <Link
             to="/kontakt"
             className="group inline-flex items-center gap-2 rounded-full bg-ink px-6 py-3.5 text-sm text-cream transition hover:bg-ink/90"

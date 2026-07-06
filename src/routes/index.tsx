@@ -19,6 +19,7 @@ const capabilities = [
 
 function Home() {
   return (
+    <>
       {/* HERO */}
       <section className="relative overflow-hidden">
         <div
@@ -139,14 +140,6 @@ function Home() {
         </div>
       </section>
 
-      {/* IMAGE BAND - team workshop */}
-      <section aria-hidden>
-        <div
-          className="h-[36vh] min-h-[280px] w-full bg-cover bg-center md:h-[48vh]"
-          style={{ backgroundImage: `url(${teamWorkshop})` }}
-        />
-      </section>
-
       {/* CTA */}
       <section className="border-t border-border/60 bg-ink text-cream">
         <div className="container-prose py-24 md:py-32">
@@ -165,7 +158,7 @@ function Home() {
               </p>
             </div>
             <div className="md:col-span-4 md:text-right">
-              <a
+              
                 href="https://calendly.com/stephanie-wieck/"
                 target="_blank"
                 rel="noreferrer"

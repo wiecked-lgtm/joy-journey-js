@@ -1,49 +1,176 @@
-12:28:26.887 Running build in Washington, D.C., USA (East) – iad1
-12:28:26.887 Build machine configuration: 2 cores, 8 GB
-12:28:26.989 Cloning github.com/wiecked-lgtm/joy-journey-js (Branch: main, Commit: 230c6b2)
-12:28:28.093 Cloning completed: 1.104s
-12:28:28.164 Restored build cache from previous deployment (AegbvTD6bea5pHjuPKdb4Adxr3wQ)
-12:28:28.403 Running "vercel build"
-12:28:28.432 Vercel CLI 54.19.0
-12:28:29.071 Installing dependencies...
-12:28:29.112 bun install v1.3.12 (700fc117)
-12:28:29.304 
-12:28:29.304 Checked 505 installs across 627 packages (no changes) [212.00ms]
-12:28:29.317 Running "bun run build"
-12:28:29.321 $ vite build
-12:28:31.060 [info] [nitro:vercel] Using `nodejs24.x` runtime.
-12:28:31.061 [info] [nitro:vercel] Using `web` entry format.
-12:28:31.068 The plugin "vite-tsconfig-paths" is detected. Vite now supports tsconfig paths resolution natively via the resolve.tsconfigPaths option. You can remove the plugin and set resolve.tsconfigPaths: true in your Vite config instead.
-12:28:31.126 Error: Error transforming route file /vercel/path0/src/routes/index.tsx: SyntaxError: Expected corresponding JSX closing tag for <div>. (169:14)
-12:28:31.127     at file:///vercel/path0/node_modules/@tanstack/router-generator/dist/esm/generator.js:143:13
-12:28:31.127     at async generate (file:///vercel/path0/node_modules/@tanstack/router-plugin/dist/esm/core/router-generator-plugin.js:39:4)
-12:28:31.127     at async BasicMinimalPluginContext.configResolved (file:///vercel/path0/node_modules/@tanstack/router-plugin/dist/esm/core/router-generator-plugin.js:56:4)
-12:28:31.128     at async Promise.all (index 5)
-12:28:31.128     at async resolveConfig (file:///vercel/path0/node_modules/vite/dist/node/chunks/node.js:34748:2)
-12:28:31.128     at async createBuilder (file:///vercel/path0/node_modules/vite/dist/node/chunks/node.js:33650:17)
-12:28:31.128     at async CAC.<anonymous> (file:///vercel/path0/node_modules/vite/dist/node/cli.js:766:19)
-12:28:31.134 vite v8.0.16 building client environment for production...
-12:28:31.437 
-transforming...✓ 178 modules transformed.
-12:28:31.439 ✗ Build failed in 301ms
-12:28:31.440 error during build:
-12:28:31.440 Build failed with 1 error:
-12:28:31.440 
-12:28:31.440 [plugin tanstack-start:route-tree-client-plugin]
-12:28:31.440 Error: Crawling result not available
-12:28:31.440     at LoadPluginContextImpl.handler (file:///vercel/path0/node_modules/@tanstack/start-plugin-core/dist/esm/vite/start-router-plugin/plugin.js:69:32)
-12:28:31.441     at async plugin (file:///vercel/path0/node_modules/vite/node_modules/rolldown/dist/shared/bindingify-input-options-ClrST5Xx.mjs:1219:16)
-12:28:31.441     at async plugin.<computed> (file:///vercel/path0/node_modules/vite/node_modules/rolldown/dist/shared/bindingify-input-options-ClrST5Xx.mjs:1625:12)
-12:28:31.441     at aggregateBindingErrorsIntoJsError (file:///vercel/path0/node_modules/vite/node_modules/rolldown/dist/shared/error-BuvQYXuZ.mjs:48:18)
-12:28:31.441     at unwrapBindingResult (file:///vercel/path0/node_modules/vite/node_modules/rolldown/dist/shared/error-BuvQYXuZ.mjs:18:128)
-12:28:31.441     at #build (file:///vercel/path0/node_modules/vite/node_modules/rolldown/dist/shared/rolldown-build-CrPk_lZe.mjs:3246:34)
-12:28:31.441     at async buildEnvironment (file:///vercel/path0/node_modules/vite/dist/node/chunks/node.js:33253:64)
-12:28:31.442     at async Object.build (file:///vercel/path0/node_modules/vite/dist/node/chunks/node.js:33675:19)
-12:28:31.442     at async buildStartViteEnvironments (file:///vercel/path0/node_modules/@tanstack/start-plugin-core/dist/esm/vite/planning.js:95:23)
-12:28:31.442     at async Object.buildApp (file:///vercel/path0/node_modules/@tanstack/start-plugin-core/dist/esm/vite/plugin.js:113:8)
-12:28:31.442     at async Object.buildApp (file:///vercel/path0/node_modules/vite/dist/node/chunks/node.js:33667:6)
-12:28:31.442     at async CAC.<anonymous> (file:///vercel/path0/node_modules/vite/dist/node/cli.js:777:3) {
-12:28:31.442   errors: [Getter/Setter]
-12:28:31.442 }
-12:28:31.506 error: script "build" exited with code 1
-12:28:31.515 Error: Command "bun run build" exited with 1
+import { createFileRoute, Link } from "@tanstack/react-router";
+import { ArrowRight, ArrowUpRight, Sparkles } from "lucide-react";
+import birdsHero from "../birds-flock.png";
+
+export const Route = createFileRoute("/")({
+  component: Home,
+});
+
+const capabilities = [
+  "KI-gestützte Content-Workflows",
+  "Performance Marketing & Paid Ads",
+  "SEO- und Content-Systeme",
+  "Newsletter- und CRM-Automatisierungen",
+  "KI-gestützte Research- und Analyseprozesse",
+  "Reporting-Automatisierungen",
+  "Funnel- und Conversion-Optimierung",
+  "Social Media & Kampagnenproduktion",
+];
+
+function Home() {
+  return (
+    <>
+      {/* HERO */}
+      <section className="relative overflow-hidden">
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 opacity-[0.16] mix-blend-multiply"
+          style={{
+            backgroundImage: `url(${birdsHero})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        />
+        <div className="container-prose relative pt-24 pb-32 md:pt-36 md:pb-44">
+          <div className="max-w-4xl animate-fade-up">
+            <div className="inline-flex items-center gap-2 rounded-full border border-border bg-background/60 px-4 py-1.5 text-xs uppercase tracking-[0.22em] text-muted-foreground backdrop-blur">
+              <span className="h-1.5 w-1.5 rounded-full bg-ochre" />
+              Marketing · Strategie · KI
+            </div>
+            <h1 className="mt-8 font-display text-5xl leading-[1.05] text-ink md:text-7xl lg:text-[5.5rem]">
+              Intelligentes{" "}
+              <span className="italic text-ochre">Marketing</span>,
+              <br />
+              das Zeit spart und
+              <br />
+              Ergebnisse liefert.
+            </h1>
+            <p className="mt-8 max-w-2xl text-lg leading-relaxed text-foreground/75 md:text-xl">
+              Von Content und Kampagnen bis zu Automatisierungen und Performance-Prozessen:
+              Gemeinsam entwickeln wir Systeme, die Zeit sparen, Teams entlasten und
+              messbare Ergebnisse liefern.
+            </p>
+            <div className="mt-10 flex flex-wrap items-center gap-4">
+              <Link
+                to="/kontakt"
+                className="group inline-flex items-center gap-2 rounded-full bg-ink px-6 py-3.5 text-sm text-cream transition hover:bg-ink/90"
+              >
+                Kostenloses Erstgespräch buchen
+                <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
+              </Link>
+              <Link
+                to="/leistungen"
+                className="group inline-flex items-center gap-2 text-sm text-foreground/80 underline-offset-4 hover:text-ink hover:underline"
+              >
+                Pakete ansehen
+                <ArrowUpRight className="h-4 w-4 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ABOUT INTRO */}
+      <section className="border-t border-border/60 bg-cream">
+        <div className="container-prose grid gap-16 py-24 md:grid-cols-12 md:py-32">
+          <div className="md:col-span-4">
+            <div className="text-xs uppercase tracking-[0.22em] text-muted-foreground">
+              Über mich
+            </div>
+            <h2 className="mt-6 font-display text-4xl leading-[1.1] text-ink md:text-5xl">
+              Marketing, das <span className="italic text-ochre">wirkt</span>.
+            </h2>
+          </div>
+          <div className="space-y-6 text-lg leading-relaxed text-foreground/80 md:col-span-7 md:col-start-6">
+            <p>
+              Seit über 15 Jahren arbeite ich an der Schnittstelle von Marketing,
+              Kommunikation und digitalem Wachstum. Dabei denke ich strategisch und setze
+              gleichzeitig hands-on maßgeschneiderte Prozesse um.
+            </p>
+            <p>
+              Ich unterstütze Unternehmen dabei, KI strategisch und praxisnah in ihr
+              Marketing zu integrieren. Mein Fokus liegt auf datengetriebenem Marketing,
+              Performance-Kampagnen und der Integration moderner KI- und
+              Automatisierungsprozesse in bestehende Teams und Workflows.
+            </p>
+            <div>
+              <Link
+                to="/ueber-mich"
+                className="group inline-flex items-center gap-2 text-sm text-ink underline-offset-4 hover:underline"
+              >
+                Mehr über meine Arbeit
+                <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CAPABILITIES */}
+      <section className="border-t border-border/60">
+        <div className="container-prose py-24 md:py-32">
+          <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
+            <div>
+              <div className="text-xs uppercase tracking-[0.22em] text-muted-foreground">
+                Typische Einsatzbereiche
+              </div>
+              <h2 className="mt-6 max-w-2xl font-display text-4xl leading-tight text-ink md:text-5xl">
+                Wo KI und Automation in eurem Marketing sofort wirken.
+              </h2>
+            </div>
+            <Sparkles className="h-8 w-8 text-ochre" />
+          </div>
+
+          <ul className="mt-16 grid divide-y divide-border border-y border-border md:grid-cols-2 md:divide-y-0 md:[&>li:nth-child(even)]:border-l md:[&>li]:border-border">
+            {capabilities.map((item, i) => (
+              <li
+                key={item}
+                className="group flex items-center justify-between gap-6 py-6 md:py-8"
+              >
+                <div className="flex items-center gap-6 pl-0 md:pl-8">
+                  <span className="font-display text-xl text-ochre md:text-2xl">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <span className="text-lg text-foreground/85 md:text-xl">{item}</span>
+                </div>
+                <ArrowUpRight className="mr-0 h-5 w-5 text-muted-foreground transition group-hover:text-ochre md:mr-8" />
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="border-t border-border/60 bg-ink text-cream">
+        <div className="container-prose py-24 md:py-32">
+          <div className="grid gap-12 md:grid-cols-12 md:items-end">
+            <div className="md:col-span-8">
+              <div className="text-xs uppercase tracking-[0.22em] text-cream/60">
+                Der erste Schritt kostet nichts
+              </div>
+              <h2 className="mt-6 font-display text-4xl leading-tight text-cream md:text-6xl">
+                Bereit für <span className="italic text-ochre">effizienteres</span>{" "}
+                Marketing?
+              </h2>
+              <p className="mt-6 max-w-2xl text-lg text-cream/75">
+                30 Minuten reichen, um zu sehen, ob KI eure Marketingprozesse wirklich
+                voranbringen kann. Pragmatisch und ohne unnötige Komplexität.
+              </p>
+            </div>
+            <div className="md:col-span-4 md:text-right">
+              
+                href="https://calendly.com/stephanie-wieck/"
+                target="_blank"
+                rel="noreferrer"
+                className="group inline-flex items-center gap-2 rounded-full bg-ochre px-6 py-3.5 text-sm text-ink transition hover:bg-ochre/90"
+              >
+                Termin vereinbaren
+                <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </>
+  );
+}

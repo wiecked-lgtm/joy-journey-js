@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Mail, Linkedin, Calendar, ArrowRight } from "lucide-react";
-import desk from "../assets/desk-keyboards.jpg.asset.json";
+import desk from "../assets/desk-keyboards.jpg.png";
 
 export const Route = createFileRoute("/kontakt")({
   head: () => ({

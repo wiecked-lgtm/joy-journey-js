@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Mail, Linkedin, Calendar, ArrowRight } from "lucide-react";
-import desk from "../assets/desk-keyboards.png";
+import desk from "../desk-keyboards.png";
 
 export const Route = createFileRoute("/kontakt")({
   head: () => ({
@@ -111,7 +111,7 @@ function Kontakt() {
     <section aria-hidden className="border-t border-border/60">
       <div
         className="h-[36vh] min-h-[280px] w-full bg-cover bg-center md:h-[52vh]"
-        style={{ backgroundImage: `url(${desk-keyboards.png})` }}
+        style={{ backgroundImage: `url(${desk})` }}
       />
     </section>
     </>

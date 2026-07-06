@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
-import portrait from "../assets/portrait-stephanie.jpg.asset.json";
-import handsLaptop from "../assets/hands-laptop.jpg.asset.json";
+import portrait from "../assets/portrait-stephanie.jpg.png";
+import handsLaptop from "../assets/hands-laptop.jpg.png";
 
 export const Route = createFileRoute("/ueber-mich")({
   head: () => ({

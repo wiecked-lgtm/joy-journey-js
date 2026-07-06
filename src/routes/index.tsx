@@ -158,7 +158,7 @@ function Home() {
               </p>
             </div>
             <div className="md:col-span-4 md:text-right">
-              
+              <a
                 href="https://calendly.com/stephanie-wieck/"
                 target="_blank"
                 rel="noreferrer"

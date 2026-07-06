@@ -37,7 +37,6 @@ export function SiteFooter() {
                   LinkedIn
                 </a>
               </li>
-              <li className="text-muted-foreground">Weserstraße 217, 12047 Berlin</li>
             </ul>
           </div>
 

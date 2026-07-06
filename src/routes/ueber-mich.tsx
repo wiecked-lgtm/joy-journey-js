@@ -71,7 +71,7 @@ function UeberMich() {
         <div className="container-prose py-16 md:py-24">
           <figure className="overflow-hidden rounded-2xl">
             <img
-              src={portrait.url}
+              src={portrait-stephanie.jpg.png}
               alt="Stephanie Wieck"
               className="h-auto w-full object-cover"
               loading="lazy"

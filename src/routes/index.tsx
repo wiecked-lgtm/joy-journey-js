@@ -1,7 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, ArrowUpRight, Sparkles } from "lucide-react";
 import birdsHero from "../birds-flock.png";
-import workspaceCoffee from "../workspace-coffee.png";
 import teamWorkshop from "../team-workshop.png";
 
 export const Route = createFileRoute("/")({
@@ -106,14 +105,6 @@ function Home() {
             </div>
           </div>
         </div>
-      </section>
-
-      {/* IMAGE BAND - workspace */}
-      <section aria-hidden className="border-t border-border/60">
-        <div
-          className="h-[36vh] min-h-[280px] w-full bg-cover bg-center md:h-[52vh]"
-          style={{ backgroundImage: `url(${workspaceCoffee})` }}
-        />
       </section>
 
       {/* CAPABILITIES */}

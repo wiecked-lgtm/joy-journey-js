@@ -1,8 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, ArrowUpRight, Sparkles } from "lucide-react";
-import birdsHero from "../assets/birds-flock.jpg.asset.json";
-import workspaceCoffee from "../assets/workspace-coffee.jpg.asset.json";
-import teamWorkshop from "../assets/team-workshop.jpg.asset.json";
+import birdsHero from "../assets/birds-flock.jpg.png";
+import workspaceCoffee from "../assets/workspace-coffee.jpg.png";
+import teamWorkshop from "../assets/team-workshop.jpg.png";
 
 export const Route = createFileRoute("/")({
   component: Home,

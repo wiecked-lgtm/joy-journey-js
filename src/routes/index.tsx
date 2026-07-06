@@ -1,8 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, ArrowUpRight, Sparkles } from "lucide-react";
-import birdsHero from "../assets/birds-flock.jpg.png";
-import workspaceCoffee from "../assets/workspace-coffee.jpg.png";
-import teamWorkshop from "../assets/team-workshop.jpg.png";
+import birdsHero from "../birds-flock.png";
+import workspaceCoffee from "../workspace-coffee.png";
+import teamWorkshop from "../team-workshop.png";
 
 export const Route = createFileRoute("/")({
   component: Home,
@@ -28,7 +28,7 @@ function Home() {
           aria-hidden
           className="pointer-events-none absolute inset-0 opacity-[0.16] mix-blend-multiply"
           style={{
-            backgroundImage: `url(${birdsHero.url})`,
+            backgroundImage: `url(${birdsHero})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
@@ -112,7 +112,7 @@ function Home() {
       <section aria-hidden className="border-t border-border/60">
         <div
           className="h-[36vh] min-h-[280px] w-full bg-cover bg-center md:h-[52vh]"
-          style={{ backgroundImage: `url(${workspaceCoffee.url})` }}
+          style={{ backgroundImage: `url(${workspaceCoffee})` }}
         />
       </section>
 
@@ -154,7 +154,7 @@ function Home() {
       <section aria-hidden>
         <div
           className="h-[36vh] min-h-[280px] w-full bg-cover bg-center md:h-[48vh]"
-          style={{ backgroundImage: `url(${teamWorkshop.url})` }}
+          style={{ backgroundImage: `url(${teamWorkshop})` }}
         />
       </section>
 

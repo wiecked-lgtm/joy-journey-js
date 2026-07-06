@@ -1,7 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, ArrowUpRight, Sparkles } from "lucide-react";
 import birdsHero from "../birds-flock.png";
-import teamWorkshop from "../team-workshop.png";
 
 export const Route = createFileRoute("/")({
   component: Home,
@@ -20,7 +19,6 @@ const capabilities = [
 
 function Home() {
   return (
-    <>
       {/* HERO */}
       <section className="relative overflow-hidden">
         <div

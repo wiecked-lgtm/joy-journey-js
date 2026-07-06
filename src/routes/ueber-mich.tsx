@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
-import portrait from "../assets/portrait-stephanie.png";
-import handsLaptop from "../assets/hands-laptop.png";
+import portrait from "../portrait-stephanie";
+import handsLaptop from "../hands-laptop";
 
 export const Route = createFileRoute("/ueber-mich")({
   head: () => ({
@@ -112,7 +112,7 @@ function UeberMich() {
       <section aria-hidden>
         <div
           className="h-[36vh] min-h-[280px] w-full bg-cover bg-center md:h-[48vh]"
-          style={{ backgroundImage: `url(${handsLaptop.url})` }}
+          style={{ backgroundImage: `url(${hands-laptop})` }}
         />
       </section>
 

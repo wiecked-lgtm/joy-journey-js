@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Check, ArrowRight } from "lucide-react";
-import dashboard from "../assets/laptop-dashboard.jpg.asset.json";
+import dashboard from "../assets/laptop-dashboard.jpg.png";
 
 export const Route = createFileRoute("/leistungen")({
   head: () => ({

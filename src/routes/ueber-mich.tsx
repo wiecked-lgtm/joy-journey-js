@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
-import portrait from "../assets/portrait-stephanie.jpg.png";
-import handsLaptop from "../assets/hands-laptop.jpg.png";
+import portrait from "../assets/portrait-stephanie.png";
+import handsLaptop from "../assets/hands-laptop.png";
 
 export const Route = createFileRoute("/ueber-mich")({
   head: () => ({
@@ -71,7 +71,7 @@ function UeberMich() {
         <div className="container-prose py-16 md:py-24">
           <figure className="overflow-hidden rounded-2xl">
             <img
-              src={portrait-stephanie.jpg.png}
+              src={portrait-stephanie.png}
               alt="Stephanie Wieck"
               className="h-auto w-full object-cover"
               loading="lazy"

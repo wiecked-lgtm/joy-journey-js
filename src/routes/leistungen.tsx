@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Check, ArrowRight } from "lucide-react";
-import dashboard from "../assets/laptop-dashboard.jpg.png";
+import dashboard from "../assets/laptop-dashboard.png";
 
 export const Route = createFileRoute("/leistungen")({
   head: () => ({
@@ -88,7 +88,7 @@ function Leistungen() {
       <section aria-hidden>
         <div
           className="h-[36vh] min-h-[280px] w-full bg-cover bg-center md:h-[48vh]"
-          style={{ backgroundImage: `url(${dashboard.url})` }}
+          style={{ backgroundImage: `url(${laptop-dashboard.png})` }}
         />
       </section>
 

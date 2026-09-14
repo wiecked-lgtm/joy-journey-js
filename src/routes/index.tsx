@@ -83,13 +83,12 @@ function Home() {
             <p>
               Seit über 15 Jahren arbeite ich an der Schnittstelle von Marketing,
               Kommunikation und digitalem Wachstum. Dabei denke ich strategisch und setze
-              gleichzeitig hands-on maßgeschneiderte Prozesse um.
+              hands-on maßgeschneiderte Prozesse um.
             </p>
             <p>
-              Ich unterstütze Unternehmen dabei, KI strategisch und praxisnah in ihr
-              Marketing zu integrieren. Mein Fokus liegt auf datengetriebenem Marketing,
-              Performance-Kampagnen und der Integration moderner KI- und
-              Automatisierungsprozesse in bestehende Teams und Workflows.
+              Mein Fokus liegt auf der Entwicklung passgenauer Botschaften, 
+              datengetriebenem Marketing und bei Bedarf der Integration von 
+              KI- und Automatisierungsprozessen in bestehende Teams und Workflows.
             </p>
             <div>
               <Link

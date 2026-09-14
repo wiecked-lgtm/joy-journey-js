@@ -35,20 +35,18 @@ function Home() {
           <div className="max-w-4xl animate-fade-up">
             <div className="inline-flex items-center gap-2 rounded-full border border-border bg-background/60 px-4 py-1.5 text-xs uppercase tracking-[0.22em] text-muted-foreground backdrop-blur">
               <span className="h-1.5 w-1.5 rounded-full bg-ochre" />
-              Marketing · Strategie · KI
+              Marketing · Kommunikation · KI
             </div>
             <h1 className="mt-8 font-display text-5xl leading-[1.05] text-ink md:text-7xl lg:text-[5.5rem]">
-              Intelligentes{" "}
-              <span className="italic text-ochre">Marketing</span>,
+              Die richtige{" "}
+              <span className="italic text-ochre">Botschaft</span>.
               <br />
-              das Zeit spart und
-              <br />
-              Ergebnisse liefert.
+              das richtige System dahinter.
             </h1>
             <p className="mt-8 max-w-2xl text-lg leading-relaxed text-foreground/75 md:text-xl">
-              Von Content und Kampagnen bis zu Automatisierungen und Performance-Prozessen:
-              Gemeinsam entwickeln wir Systeme, die Zeit sparen, Teams entlasten und
-              messbare Ergebnisse liefern.
+              Ich verstärke Marketing- und Kommunikationsteams oder übernehme ihre Führung, 
+              wenn Strukturen fehlen. Von der Botschaft über Paid-Kampagnen bis zum Reporting: 
+              strategisch klar, hands-on umgesetzt und bei Bedarf KI-gestützt.
             </p>
             <div className="mt-10 flex flex-wrap items-center gap-4">
               <Link

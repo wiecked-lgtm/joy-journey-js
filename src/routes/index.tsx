@@ -6,15 +6,37 @@ export const Route = createFileRoute("/")({
   component: Home,
 });
 
-const capabilities = [
-  "Content-Workflows",
-  "Performance Marketing & Paid Ads",
-  "SEO- und Content-Systeme",
-  "Newsletter- und CRM-Automatisierungen",
-  "Research- und Analyseprozesse",
-  "Reporting-Automatisierungen",
-  "Funnel- und Conversion-Optimierung",
-  "Social Media & Kampagnenproduktion",
+const fields = [
+  {
+    title: "Positionierung & Kommunikation",
+    sub: "Was ihr sagt, und warum es jemanden interessiert.",
+    items: [
+      "Positionierung, Narrativ, Messaging",
+      "PR & Media Relations (DE)",
+      "Kampagnen um Schlüsselmomente",
+      "Sprecher:innen-Briefing, Krisenkommunikation",
+    ],
+  },
+  {
+    title: "Performance & Wachstum",
+    sub: "Wie aus Reichweite Leads und Kund:innen werden. Einmalig aufgebaut oder laufend betreut.",
+    items: [
+      "Paid Media (Meta, Google)",
+      "Tracking & Reporting (GA4, GTM, Looker Studio)",
+      "Funnel- und Conversion-Optimierung",
+      "Newsletter- und CRM-Strecken",
+    ],
+  },
+  {
+    title: "KI & Automatisierung",
+    sub: "Wie das alles auch mit wenig Zeit läuft.",
+    items: [
+      "KI-gestützte Content-Workflows",
+      "Research- und Analyseprozesse",
+      "Reporting-Automatisierungen",
+      "Enablement: Workshops & Playbooks",
+    ],
+  },
 ];
 
 function Home() {
@@ -44,8 +66,8 @@ function Home() {
               Sauber in der Umsetzung.
             </h1>
             <p className="mt-8 max-w-2xl text-lg leading-relaxed text-foreground/75 md:text-xl">
-              Ich verstärke Marketing- und Kommunikationsteams oder übernehme ihre Führung, 
-              wenn Strukturen fehlen. Von der Botschaft über Paid-Kampagnen bis zum Reporting: 
+              Ich verstärke Marketing- und Kommunikationsteams oder übernehme ihre Führung,
+              wenn Strukturen fehlen. Von der Botschaft über Paid-Kampagnen bis zum Reporting:
               strategisch klar, hands-on umgesetzt und bei Bedarf KI-gestützt.
             </p>
             <div className="mt-10 flex flex-wrap items-center gap-4">
@@ -86,8 +108,8 @@ function Home() {
               hands-on maßgeschneiderte Prozesse um.
             </p>
             <p>
-              Mein Fokus liegt auf der Entwicklung passgenauer Botschaften, 
-              datengetriebenem Marketing und bei Bedarf der Integration  
+              Mein Fokus liegt auf der Entwicklung passgenauer Botschaften,
+              datengetriebenem Marketing und bei Bedarf der Integration
               von Automatisierungsprozessen in bestehende Teams und Workflows.
             </p>
             <div>
@@ -103,37 +125,100 @@ function Home() {
         </div>
       </section>
 
-      {/* CAPABILITIES */}
+      {/* DREI FELDER */}
       <section className="border-t border-border/60">
         <div className="container-prose py-24 md:py-32">
           <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
             <div>
               <div className="text-xs uppercase tracking-[0.22em] text-muted-foreground">
-                Typische Einsatzbereiche
+                Drei Felder, ein Ansatz
               </div>
               <h2 className="mt-6 max-w-2xl font-display text-4xl leading-tight text-ink md:text-5xl">
-                Wo KI und Automation in eurem Marketing sofort wirken.
+                Botschaft, Wachstum, <span className="italic text-ochre">Tempo</span>.
               </h2>
             </div>
             <Sparkles className="h-8 w-8 text-ochre" />
           </div>
 
-          <ul className="mt-16 grid divide-y divide-border border-y border-border md:grid-cols-2 md:divide-y-0 md:[&>li:nth-child(even)]:border-l md:[&>li]:border-border">
-            {capabilities.map((item, i) => (
-              <li
-                key={item}
-                className="group flex items-center justify-between gap-6 py-6 md:py-8"
+          <div className="mt-16 grid gap-12 border-t border-border pt-12 md:grid-cols-3 md:gap-0 md:divide-x md:divide-border">
+            {fields.map((field) => (
+              <div
+                key={field.title}
+                className="md:px-8 md:first:pl-0 md:last:pr-0"
               >
-                <div className="flex items-center gap-6 pl-0 md:pl-8">
-                  <span className="font-display text-xl text-ochre md:text-2xl">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <span className="text-lg text-foreground/85 md:text-xl">{item}</span>
-                </div>
-                <ArrowUpRight className="mr-0 h-5 w-5 text-muted-foreground transition group-hover:text-ochre md:mr-8" />
-              </li>
+                <h3 className="font-display text-2xl leading-snug text-ink">
+                  {field.title}
+                </h3>
+                <p className="mt-3 text-base leading-relaxed text-foreground/70 md:min-h-[3.75rem]">
+                  {field.sub}
+                </p>
+                <ul className="mt-6 divide-y divide-border border-t border-border">
+                  {field.items.map((item) => (
+                    <li key={item} className="py-3 text-base text-foreground/85">
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             ))}
-          </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* ZWEI ARTEN ZUSAMMENZUARBEITEN */}
+      <section className="border-t border-border/60 bg-cream">
+        <div className="container-prose py-24 md:py-32">
+          <div className="text-xs uppercase tracking-[0.22em] text-muted-foreground">
+            Zwei Arten zusammenzuarbeiten
+          </div>
+          <h2 className="mt-6 font-display text-4xl leading-tight text-ink md:text-5xl">
+            Ein Projekt oder eine <span className="italic text-ochre">Rolle</span>.
+          </h2>
+
+          <div className="mt-16 grid gap-6 md:grid-cols-2">
+            <div className="flex flex-col rounded-2xl border border-border bg-background p-8 md:p-10">
+              <div className="text-xs uppercase tracking-[0.22em] text-muted-foreground">
+                Pakete
+              </div>
+              <h3 className="mt-4 font-display text-2xl leading-snug text-ink md:text-3xl">
+                KI-Pakete mit festem Umfang
+              </h3>
+              <p className="mt-4 text-base leading-relaxed text-foreground/75">
+                Ein konkreter Use Case, ein vollständiger Aufbau oder laufende
+                Optimierung. Klarer Scope, klarer Preis, klares Ergebnis. Für Teams,
+                die mit KI anfangen oder es endlich sauber machen wollen.
+              </p>
+              <Link
+                to="/leistungen"
+                className="group mt-auto inline-flex items-center gap-2 self-start rounded-full border border-border px-6 py-3.5 text-sm text-ink transition hover:border-ink/40"
+              >
+                Pakete ansehen
+                <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
+              </Link>
+            </div>
+
+            <div className="flex flex-col rounded-2xl border border-ink bg-ink p-8 text-cream md:p-10">
+              <div className="text-xs uppercase tracking-[0.22em] text-cream/60">
+                Freelance & Interim
+              </div>
+              <h3 className="mt-4 font-display text-2xl leading-snug text-cream md:text-3xl">
+                Performance Marketing oder Marketingleitung auf Zeit
+              </h3>
+              <p className="mt-4 text-base leading-relaxed text-cream/75">
+                Wenn ihr jemanden braucht, der eure Paid-Kampagnen und das Tracking
+                laufend verantwortet, oder die Marketingleitung übernimmt, solange die
+                Position offen ist oder ein Markteintritt ansteht. Tageweise, für
+                Monate, hands-on.
+              </p>
+              <Link
+                to="/leistungen"
+                className="group mt-auto inline-flex items-center gap-2 self-start rounded-full bg-ochre px-6 py-3.5 text-sm text-ink transition hover:bg-ochre/90"
+              >
+                Formate ansehen
+                <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
+              </Link>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -150,8 +235,8 @@ function Home() {
                 sprechen.
               </h2>
               <p className="mt-6 max-w-2xl text-lg text-cream/75">
-                30 Minuten reichen, um zu sehen, wo der größte Hebel liegt: In der 
-                Botschaft, im Funnel oder im Prozess. Pragmatisch und ohne unnötige 
+                30 Minuten reichen, um zu sehen, wo der größte Hebel liegt: In der
+                Botschaft, im Funnel oder im Prozess. Pragmatisch und ohne unnötige
                 Komplexität.
               </p>
             </div>

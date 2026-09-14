@@ -38,10 +38,10 @@ function Home() {
               Marketing · Kommunikation · KI
             </div>
             <h1 className="mt-8 font-display text-5xl leading-[1.05] text-ink md:text-7xl lg:text-[5.5rem]">
-              Die richtige{" "}
+              Klar in der{" "}
               <span className="italic text-ochre">Botschaft</span>.
               <br />
-              das richtige System dahinter.
+              Sauber in der Umsetzung.
             </h1>
             <p className="mt-8 max-w-2xl text-lg leading-relaxed text-foreground/75 md:text-xl">
               Ich verstärke Marketing- und Kommunikationsteams oder übernehme ihre Führung, 

@@ -17,7 +17,7 @@ export function SiteHeader() {
       <div className="container-prose flex h-20 items-center justify-between">
         <Link to="/" className="flex items-center" aria-label="Wieck Marketing Strategy, Startseite">
           <img
-            src="/Logo_Transparent.svg"
+            src="/svg-logo_neu.svg"
             alt="Wieck Marketing Strategy"
             className="h-10 w-auto md:h-12"
           />

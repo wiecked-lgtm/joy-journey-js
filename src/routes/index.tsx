@@ -87,8 +87,8 @@ function Home() {
             </p>
             <p>
               Mein Fokus liegt auf der Entwicklung passgenauer Botschaften, 
-              datengetriebenem Marketing und bei Bedarf der Integration von 
-              KI- und Automatisierungsprozessen in bestehende Teams und Workflows.
+              datengetriebenem Marketing und bei Bedarf der Integration  
+              von Automatisierungsprozessen in bestehende Teams und Workflows.
             </p>
             <div>
               <Link

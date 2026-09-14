@@ -7,11 +7,11 @@ export const Route = createFileRoute("/")({
 });
 
 const capabilities = [
-  "KI-gestützte Content-Workflows",
+  "Content-Workflows",
   "Performance Marketing & Paid Ads",
   "SEO- und Content-Systeme",
   "Newsletter- und CRM-Automatisierungen",
-  "KI-gestützte Research- und Analyseprozesse",
+  "Research- und Analyseprozesse",
   "Reporting-Automatisierungen",
   "Funnel- und Conversion-Optimierung",
   "Social Media & Kampagnenproduktion",

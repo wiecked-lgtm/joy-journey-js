@@ -146,12 +146,13 @@ function Home() {
                 Der erste Schritt kostet nichts
               </div>
               <h2 className="mt-6 font-display text-4xl leading-tight text-cream md:text-6xl">
-                Bereit für <span className="italic text-ochre">effizienteres</span>{" "}
-                Marketing?
+                Lasst uns über euer <span className="italic text-ochre">Marketing</span>{" "}
+                sprechen.
               </h2>
               <p className="mt-6 max-w-2xl text-lg text-cream/75">
-                30 Minuten reichen, um zu sehen, ob KI eure Marketingprozesse wirklich
-                voranbringen kann. Pragmatisch und ohne unnötige Komplexität.
+                30 Minuten reichen, um zu sehen, wo der größte Hebel liegt: In der 
+                Botschaft, im Funnel oder im Prozess. Pragmatisch und ohne unnötige 
+                Komplexität.
               </p>
             </div>
             <div className="md:col-span-4 md:text-right">

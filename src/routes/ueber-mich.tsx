@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
-import portrait from "../portrait-stephanie.png";
+import portrait from "../portrait-stephanie_2.jpg";
 
 export const Route = createFileRoute("/ueber-mich")({
   head: () => ({
@@ -45,7 +45,7 @@ function UeberMich() {
             />
           </div>
 
-          <div className="space-y-6 text-lg leading-relaxed text-foreground/80 md:col-span-6 md:col-start-7 md:mt-12">
+          <div className="space-y-6 text-lg leading-relaxed text-foreground/80 md:col-span-6 md:col-start-7 md:mt-10">
             <p>
               Es gibt Leute, die starke Botschaften entwickeln. Und Leute, die
               Tracking mit Dashboard aufsetzen. Ich mache seit über 15 Jahren beides

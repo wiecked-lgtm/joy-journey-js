@@ -35,6 +35,14 @@ function UeberMich() {
               Strategisch denken.{" "}
               <span className="italic text-ochre">Hands-on</span> umsetzen.
             </h1>
+            <img
+              src={portrait}
+              alt="Stephanie Wieck"
+              width={800}
+              height={800}
+              loading="lazy"
+              className="mt-10 h-40 w-40 rounded-2xl object-cover md:mt-12 md:h-52 md:w-52"
+            />
           </div>
 
           <div className="space-y-6 text-lg leading-relaxed text-foreground/80 md:col-span-6 md:col-start-7">
@@ -48,9 +56,9 @@ function UeberMich() {
             <p>
               Mein Fokus liegt auf datengetriebenem Marketing,
               Performance-Kampagnen und der Integration moderner KI- und
-              Automatisierungsprozesse in bestehende Teams und Workflows. 
-              Ich unterstütze Unternehmen dabei, KI strategisch und 
-              praxisnah in ihr Marketing zu integrieren. 
+              Automatisierungsprozesse in bestehende Teams und Workflows.
+              Ich unterstütze Unternehmen dabei, KI strategisch und
+              praxisnah in ihr Marketing zu integrieren.
             </p>
 
             <p>
@@ -67,20 +75,6 @@ function UeberMich() {
               .
             </p>
           </div>
-        </div>
-      </section>
-
-      {/* Portrait */}
-      <section className="border-b border-border/60 bg-cream">
-        <div className="container-prose py-16 md:py-24">
-          <figure className="overflow-hidden rounded-2xl">
-            <img
-              src={portrait}
-              alt="Stephanie Wieck"
-              className="h-auto w-full object-cover"
-              loading="lazy"
-            />
-          </figure>
         </div>
       </section>
 

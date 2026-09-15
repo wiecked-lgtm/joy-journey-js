@@ -1,6 +1,6 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight } from "lucide-react";
-import portrait from "../portrait-stephanie.png";
+import portrait from "../portrait-stephanie_2.jpg";
 
 export const Route = createFileRoute("/ueber-mich")({
   head: () => ({
@@ -26,54 +26,58 @@ function UeberMich() {
   return (
     <>
       <section className="border-b border-border/60">
-        <div className="container-prose grid gap-12 py-24 md:grid-cols-12 md:py-32">
-          <div className="md:col-span-5">
-            <div className="text-xs uppercase tracking-[0.22em] text-muted-foreground">
-              Über mich
-            </div>
-            <h1 className="mt-6 font-display text-5xl leading-[1.05] text-ink md:text-6xl">
-              Strategisch denken.{" "}
-              <span className="italic text-ochre">Hands-on</span> umsetzen.
-            </h1>
-            <img
-              src={portrait}
-              alt="Stephanie Wieck"
-              width={800}
-              height={800}
-              loading="lazy"
-              className="mt-10 h-40 w-40 rounded-2xl object-cover md:mt-12 md:h-52 md:w-52"
-            />
+        <div className="container-prose py-24 md:py-32">
+          <div className="text-xs uppercase tracking-[0.22em] text-muted-foreground">
+            Über mich
           </div>
+          <h1 className="mt-6 max-w-4xl font-display text-5xl leading-[1.05] text-ink md:text-7xl">
+            Strategisch denken.
+            <br />
+            <span className="italic text-ochre">Hands-on</span> umsetzen.
+          </h1>
 
-          <div className="space-y-6 text-lg leading-relaxed text-foreground/80 md:col-span-6 md:col-start-7 md:mt-12">
-            <p>
-              Es gibt Leute, die starke Botschaften entwickeln. Und Leute, die
-              Tracking mit Dashboard aufsetzen. Ich mache seit über 15 Jahren beides
-              und habe gelernt: Das Ergebnis stimmt erst, wenn Botschaft und
-              Messbarkeit zusammen gedacht werden.
-            </p>
+          <div className="mt-16 grid gap-12 md:mt-20 lg:grid-cols-12">
+            <div className="lg:col-span-3">
+              <img
+                src={portrait}
+                alt="Stephanie Wieck"
+                width={800}
+                height={800}
+                loading="lazy"
+                className="aspect-square w-40 rounded-2xl object-cover sm:w-52 lg:w-full"
+              />
+            </div>
 
-            <p>
-              Mein Fokus liegt auf datengetriebenem Marketing,
-              Performance-Kampagnen und der Integration moderner KI- und
-              Automatisierungsprozesse in bestehende Teams und Workflows.
-              Ich unterstütze Unternehmen dabei, KI strategisch und
-              praxisnah in ihr Marketing zu integrieren.
-            </p>
+            <div className="max-w-2xl space-y-6 text-lg leading-relaxed text-foreground/80 lg:col-span-8 lg:col-start-5">
+              <p>
+                Es gibt Leute, die starke Botschaften entwickeln. Und Leute, die
+                Tracking mit Dashboard aufsetzen. Ich mache seit über 15 Jahren beides
+                und habe gelernt: Das Ergebnis stimmt erst, wenn Botschaft und
+                Messbarkeit zusammen gedacht werden.
+              </p>
 
-            <p>
-              Weitere Informationen zu meiner über 15-jährigen Erfahrung in Management
-              und Marketing findest du in meinem{" "}
-              <a
-                href="https://www.linkedin.com/in/wieck/"
-                target="_blank"
-                rel="noreferrer"
-                className="text-ink underline underline-offset-4 hover:text-ochre"
-              >
-                LinkedIn-Profil
-              </a>
-              .
-            </p>
+              <p>
+                Mein Fokus liegt auf datengetriebenem Marketing,
+                Performance-Kampagnen und der Integration moderner KI- und
+                Automatisierungsprozesse in bestehende Teams und Workflows.
+                Ich unterstütze Unternehmen dabei, KI strategisch und
+                praxisnah in ihr Marketing zu integrieren.
+              </p>
+
+              <p>
+                Weitere Informationen zu meiner über 15-jährigen Erfahrung in Management
+                und Marketing findest du in meinem{" "}
+                <a
+                  href="https://www.linkedin.com/in/wieck/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="text-ink underline underline-offset-4 hover:text-ochre"
+                >
+                  LinkedIn-Profil
+                </a>
+                .
+              </p>
+            </div>
           </div>
         </div>
       </section>

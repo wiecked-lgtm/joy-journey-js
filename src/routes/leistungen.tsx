@@ -60,7 +60,7 @@ const packages = [
       "Laufende Optimierung bestehender Workflows",
       "Neue Tools & Trends direkt integriert",
       "Ad-hoc Unterstützung per Slack/E-Mail (1–2 h/Woche)",
-      "Quartals-Review: Was bringt KI eurem Marketing konkret?",
+      "Quartals-Review: Was bringt die Tools eurem Marketing konkret?",
     ],
   },
 ];

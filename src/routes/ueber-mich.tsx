@@ -50,7 +50,7 @@ function UeberMich() {
 
             <div className="max-w-2xl space-y-6 text-lg leading-relaxed text-foreground/80 lg:col-span-8 lg:col-start-5">
               <p>
-                Es gibt Leute, die starke Botschaften entwickeln. Und Leute, die
+                Es gibt Menschen, die starke Botschaften entwickeln. Und Menschen, die
                 Tracking mit Dashboard aufsetzen. Ich mache seit über 15 Jahren beides
                 und habe gelernt: Das Ergebnis stimmt erst, wenn Botschaft und
                 Messbarkeit zusammen gedacht werden.

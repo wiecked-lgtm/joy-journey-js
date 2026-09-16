@@ -60,7 +60,7 @@ function UeberMich() {
                 Mein Fokus liegt auf datengetriebenem Marketing,
                 Performance-Kampagnen und der Integration moderner KI- und
                 Automatisierungsprozesse in bestehende Teams und Workflows.
-                Ich unterstütze Unternehmen dabei, KI strategisch und
+                Ich unterstütze Unternehmen auch dabei, KI strategisch und
                 praxisnah in ihr Marketing zu integrieren.
               </p>
 

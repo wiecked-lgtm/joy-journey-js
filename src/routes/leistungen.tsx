@@ -38,11 +38,11 @@ const packages = [
   {
     name: "Growth",
     price: "4.000 €",
-    tagline: "Vollständiger Aufbau eures Marketings.",
+    tagline: "Vollständiger Aufbau neuer Marketing-Tools.",
     highlight: true,
     items: [
       "Vollständiger Audit bestehender Marketing-Prozesse",
-      "3–5 KI-Workflows aufgebaut und dokumentiert",
+      "2–3 Workflows aufgebaut und dokumentiert",
       "Prompt-Bibliothek (20–30 Prompts) inkl. Qualitätssicherung",
       "Team-Workshop: Wie arbeitet ihr mit den Tools? (2–3 h)",
       "4 Wochen Begleitung & Feintuning nach Übergabe",

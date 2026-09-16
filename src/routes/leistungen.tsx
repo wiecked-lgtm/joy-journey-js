@@ -14,7 +14,7 @@ export const Route = createFileRoute("/leistungen")({
       {
         property: "og:description",
         content:
-          "Von KI-Potenzialanalyse bis laufender Optimierung: drei klare Pakete für effizienteres Marketing.",
+          "Von der Potenzialanalyse bis zur laufenden Optimierung: drei klare Pakete für effizienteres Marketing.",
       },
     ],
   }),
@@ -28,7 +28,7 @@ const packages = [
     tagline: "Einstieg mit einem konkreten Use Case.",
     highlight: false,
     items: [
-      "KI-Potenzialanalyse (wo lohnt sich KI in eurem Marketing?)",
+      "Potenzialanalyse (wo lohnt sich welches Tool in eurem Marketing?)",
       "1 Use Case vollständig umgesetzt (z. B. Content, Ads, E-Mail)",
       "Prompt-Set auf eure Brand zugeschnitten (10–15 Prompts)",
       "Tool-Empfehlungen mit konkreten Vergleichen",
@@ -38,15 +38,15 @@ const packages = [
   {
     name: "Growth",
     price: "4.000 €",
-    tagline: "Vollständiger Aufbau eures KI-Marketings.",
+    tagline: "Vollständiger Aufbau eures Marketings.",
     highlight: true,
     items: [
       "Vollständiger Audit bestehender Marketing-Prozesse",
       "3–5 KI-Workflows aufgebaut und dokumentiert",
-      "Prompt-Bibliothek (30–50 Prompts) inkl. Qualitätssicherung",
-      "Team-Workshop: Wie arbeitet ihr mit KI? (2–3 h)",
+      "Prompt-Bibliothek (20–30 Prompts) inkl. Qualitätssicherung",
+      "Team-Workshop: Wie arbeitet ihr mit den Tools? (2–3 h)",
       "4 Wochen Begleitung & Feintuning nach Übergabe",
-      "Abschlussdokumentation: Euer KI-Marketing-Playbook",
+      "Abschlussdokumentation: Euer Marketing-Playbook",
     ],
   },
   {
@@ -57,7 +57,7 @@ const packages = [
     highlight: false,
     items: [
       "Monatlicher Strategie-Call (60 min)",
-      "Laufende Optimierung bestehender KI-Workflows",
+      "Laufende Optimierung bestehender Workflows",
       "Neue Tools & Trends direkt integriert",
       "Ad-hoc Unterstützung per Slack/E-Mail (1–2 h/Woche)",
       "Quartals-Review: Was bringt KI eurem Marketing konkret?",

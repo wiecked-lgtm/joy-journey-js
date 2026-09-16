@@ -88,17 +88,17 @@ function UeberMich() {
             {
               k: "01",
               t: "Strategie",
-              d: "Ich analysiere eure Prozesse und finde die Hebel, an denen KI wirklich einen Unterschied macht.",
+              d: "Ich analysiere eure Prozesse und finde die Hebel, an denen ein Change wirklich einen Unterschied macht.",
             },
             {
               k: "02",
               t: "Umsetzung",
-              d: "Von Prompt-Bibliotheken bis Automatisierungen: konkrete Workflows, die euer Team sofort nutzen kann.",
+              d: "Von der Prozess-Optimierung bis hin zu Automatisierungen: konkrete Workflows, die euer Team sofort nutzen kann.",
             },
             {
               k: "03",
               t: "Enablement",
-              d: "Workshops und Begleitung, damit KI kein Nebenprojekt bleibt, sondern Teil eures Alltags wird.",
+              d: "Workshops und Begleitung, damit Prozesse kein Nebenprojekt bleiben, sondern Teil eures Alltags werden.",
             },
           ].map((b) => (
             <div key={b.k} className="border-t border-ink/20 pt-6">
@@ -113,7 +113,7 @@ function UeberMich() {
       <section className="border-t border-border/60">
         <div className="container-prose flex flex-col items-start justify-between gap-6 py-16 md:flex-row md:items-center">
           <h2 className="max-w-xl font-display text-3xl text-ink md:text-4xl">
-            Lass uns über euer Marketing sprechen.
+            Lass uns über Marketing und Kommunikation sprechen.
           </h2>
 
           <Link

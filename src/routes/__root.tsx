@@ -7,12 +7,47 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
-import { useEffect, type ReactNode } from "react";
+import { useEffect, useRef, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { SiteHeader } from "../components/site-header";
 import { SiteFooter } from "../components/site-footer";
+
+// ===========================================================================
+// TRACKING & CONSENT
+//
+// Reihenfolge im <head> ist entscheidend:
+//   1. Cookiebot  (setzt die Consent-Signale)
+//   2. GTM        (laedt immer, feuert Tags aber nur bei Einwilligung)
+//
+// EINMALIG IN COOKIEBOT EINSTELLEN:
+// Cookiebot Admin -> Einstellungen -> "Google Consent Mode" aktivieren.
+// Ohne diesen Schalter setzt Cookiebot keine Consent-Signale, und GA4
+// wuerde ungefragt messen. Deshalb bitte zuerst dort nachsehen.
+// ===========================================================================
+const COOKIEBOT_ID = "1333175c-a959-4c1c-a8ef-3a36a204fae2";
+const GTM_ID = "GTM-XXXXXXX";
+
+declare global {
+  interface Window {
+    dataLayer: Record<string, unknown>[];
+    Cookiebot?: { renew: () => void; show: () => void };
+  }
+}
+
+// Hinweis: Der Consent-Default (alles auf "denied") wird von Cookiebot
+// gesetzt, sobald der Google Consent Mode dort aktiviert ist. Deshalb steht
+// hier bewusst kein eigener gtag('consent','default',...)-Block: zweimal
+// gesetzt fuehrt zu Fehlern, die man spaeter kaum findet.
+
+const gtmSnippet = `
+(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','${GTM_ID}');
+`;
 
 function NotFoundComponent() {
   return (
@@ -77,20 +112,24 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Stephanie Wieck | Intelligentes Marketing mit KI" },
+      { title: "Stephanie Wieck – Marketing, Kommunikation & Performance | Berlin" },
       {
         name: "description",
         content:
-          "Marketing-Strategin für datengetriebene Kampagnen, KI-Workflows und Automatisierungen. 15+ Jahre Erfahrung an der Schnittstelle von Content, Performance & Wachstum.",
+          "Freiberufliche Marketing- und Kommunikationsstrategin in Berlin: Positionierung, Performance Marketing (Meta, Google, GA4) und KI-gestützte Prozesse. Als Projekt, laufendes Mandat oder Leitung auf Zeit.",
       },
       { name: "author", content: "Stephanie Wieck" },
-      { property: "og:title", content: "Stephanie Wieck | Intelligentes Marketing mit KI" },
+      {
+        property: "og:title",
+        content: "Stephanie Wieck – Marketing, Kommunikation & Performance | Berlin",
+      },
       {
         property: "og:description",
         content:
-          "Strategie, Content, Performance und KI-Automatisierungen für Marketing-Teams.",
+          "Ich verstärke Marketing- und Kommunikationsteams oder übernehme ihre Führung, wenn Strukturen fehlen. Von der Botschaft über Paid-Kampagnen bis zum Reporting.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:locale", content: "de_DE" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
@@ -114,9 +153,38 @@ function RootShell({ children }: { children: ReactNode }) {
   return (
     <html lang="de">
       <head>
+        {/* 1. Cookiebot. Muss das erste Script im head sein, sonst greift
+              das automatische Blockieren nicht zuverlaessig. */}
+        <script
+          id="Cookiebot"
+          src="https://consent.cookiebot.com/uc.js"
+          data-cbid={COOKIEBOT_ID}
+          data-blockingmode="auto"
+          data-culture="DE"
+          type="text/javascript"
+        />
+
+        {/* 2. Google Tag Manager. data-cookieconsent="ignore" ist wichtig:
+              GTM selbst soll immer laden, sonst kommen die Consent-Signale
+              nie an. Welche Tags feuern duerfen, entscheidet der Consent
+              Mode innerhalb von GTM. */}
+        <script
+          data-cookieconsent="ignore"
+          dangerouslySetInnerHTML={{ __html: gtmSnippet }}
+        />
+
         <HeadContent />
       </head>
       <body>
+        <noscript>
+          <iframe
+            src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+            title="Google Tag Manager"
+          />
+        </noscript>
         {children}
         <Scripts />
       </body>
@@ -124,8 +192,50 @@ function RootShell({ children }: { children: ReactNode }) {
   );
 }
 
+/**
+ * Seitenaufrufe bei Navigation innerhalb der Seite melden.
+ *
+ * Hintergrund: Bei einer Single Page Application laedt der Browser beim
+ * Seitenwechsel nichts neu. GA4 wuerde daher nur den ersten Aufruf zaehlen.
+ * Dieser Hook schiebt bei jedem Routenwechsel ein Event in den dataLayer.
+ * In GTM baust du darauf einen GA4-Event-Tag mit dem Trigger "spa_page_view"
+ * (siehe Anleitung).
+ */
+function useSpaPageViews() {
+  const router = useRouter();
+  const lastPath = useRef<string>("");
+
+  useEffect(() => {
+    const push = () => {
+      const path = window.location.pathname + window.location.search;
+      if (path === lastPath.current) return;
+      lastPath.current = path;
+
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: "spa_page_view",
+        page_path: path,
+        page_location: window.location.href,
+        page_title: document.title,
+      });
+    };
+
+    // Erster Aufruf. Kleiner Aufschub, damit der Seitentitel schon gesetzt ist.
+    const initial = window.setTimeout(push, 0);
+    const unsubscribe = router.subscribe("onResolved", () => {
+      window.setTimeout(push, 0);
+    });
+
+    return () => {
+      window.clearTimeout(initial);
+      unsubscribe();
+    };
+  }, [router]);
+}
+
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  useSpaPageViews();
 
   return (
     <QueryClientProvider client={queryClient}>

@@ -1,0 +1,9 @@
+# robots.txt fuer www.stephanie-wieck.com
+# Ablage: public/robots.txt  ->  erreichbar unter /robots.txt
+
+User-agent: *
+Allow: /
+
+# Keine Sperren noetig: Die Seite hat keine internen Bereiche.
+
+Sitemap: https://www.stephanie-wieck.com/sitemap.xml

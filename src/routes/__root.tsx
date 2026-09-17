@@ -27,7 +27,7 @@ import { SiteFooter } from "../components/site-footer";
 // wuerde ungefragt messen. Deshalb bitte zuerst dort nachsehen.
 // ===========================================================================
 const COOKIEBOT_ID = "1333175c-a959-4c1c-a8ef-3a36a204fae2";
-const GTM_ID = "GTM-XXXXXXX";
+const GTM_ID = "GTM-NFRVPC4F";
 
 declare global {
   interface Window {

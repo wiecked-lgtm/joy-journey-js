@@ -47,15 +47,35 @@ export function SiteFooter() {
             <ul className="mt-4 space-y-2 text-sm">
               <li><Link to="/impressum" className="hover:text-ochre">Impressum</Link></li>
               <li><Link to="/datenschutz" className="hover:text-ochre">Datenschutz</Link></li>
+              {/*
+                Pflicht: Die Einwilligung muss so leicht widerrufbar sein, wie
+                sie erteilt wurde. Dieser Link oeffnet den Cookiebot-Dialog
+                erneut. Er funktioniert erst, wenn Cookiebot geladen ist,
+                deshalb die optionale Verkettung.
+              */}
+              <li>
+                <button
+                  type="button"
+                  onClick={() => window.Cookiebot?.renew()}
+                  className="text-left hover:text-ochre"
+                >
+                  Cookie-Einstellungen
+                </button>
+              </li>
             </ul>
           </div>
         </div>
 
         <div className="mt-16 flex flex-col items-center gap-6 border-t border-border/60 pt-12">
+          {/*
+            Hoehe von h-28/h-32 auf h-24/h-28 reduziert: Die neue Logodatei
+            hat keinen eingebackenen Leerraum mehr, dadurch wirkt das Logo
+            bei gleicher CSS-Hoehe groesser.
+          */}
           <img
             src="/Logo_Wide_Transparent.svg"
             alt="Wieck Marketing Strategy"
-            className="h-28 w-auto md:h-32"
+            className="h-24 w-auto md:h-28"
           />
           <div className="text-xs text-muted-foreground">
             © {new Date().getFullYear()} Stephanie Wieck. Alle Rechte vorbehalten.
@@ -65,4 +85,3 @@ export function SiteFooter() {
     </footer>
   );
 }
-

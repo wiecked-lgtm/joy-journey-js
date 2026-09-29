@@ -1,5 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowRight, ArrowUpRight, Sparkles } from "lucide-react";
+// ArrowUpRight und Sparkles werden nicht mehr verwendet und sind deshalb
+// aus dem Import entfernt.
+import { ArrowRight } from "lucide-react";
 import birdsHero from "../birds-flock.png";
 
 export const Route = createFileRoute("/")({
@@ -56,6 +58,10 @@ function Home() {
                 Kostenloses Erstgespräch buchen
                 <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
               </Link>
+              {/* Verweis auf die Leistungen-Seite vorübergehend entfernt.
+                  Zum Wiedereinblenden den folgenden Block wieder aktivieren
+                  und ArrowUpRight oben wieder in den Import aufnehmen. */}
+              {/*
               <Link
                 to="/leistungen"
                 className="group inline-flex items-center gap-2 text-sm text-foreground/80 underline-offset-4 hover:text-ink hover:underline"
@@ -63,6 +69,7 @@ function Home() {
                 Pakete ansehen
                 <ArrowUpRight className="h-4 w-4 transition group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </Link>
+              */}
             </div>
           </div>
         </div>
@@ -106,31 +113,25 @@ function Home() {
       {/* CAPABILITIES */}
       <section className="border-t border-border/60">
         <div className="container-prose py-24 md:py-32">
-          <div className="flex flex-col justify-between gap-6 md:flex-row md:items-end">
-            <div>
-              <div className="text-xs uppercase tracking-[0.22em] text-muted-foreground">
-                Typische Einsatzbereiche
-              </div>
-              <h2 className="mt-6 max-w-2xl font-display text-4xl leading-tight text-ink md:text-5xl">
-                Wo KI und Automation in eurem Marketing sofort wirken.
-              </h2>
+          <div>
+            <div className="text-xs uppercase tracking-[0.22em] text-muted-foreground">
+              Typische Einsatzbereiche
             </div>
-            <Sparkles className="h-8 w-8 text-ochre" />
+            <h2 className="mt-6 max-w-2xl font-display text-4xl leading-tight text-ink md:text-5xl">
+              Wo KI und Automation in eurem Marketing sofort wirken.
+            </h2>
           </div>
 
           <ul className="mt-16 grid divide-y divide-border border-y border-border md:grid-cols-2 md:divide-y-0 md:[&>li:nth-child(even)]:border-l md:[&>li]:border-border">
             {capabilities.map((item, i) => (
               <li
                 key={item}
-                className="group flex items-center justify-between gap-6 py-6 md:py-8"
+                className="flex items-center gap-6 py-6 pl-0 pr-0 md:py-8 md:pl-8 md:pr-8"
               >
-                <div className="flex items-center gap-6 pl-0 md:pl-8">
-                  <span className="font-display text-xl text-ochre md:text-2xl">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <span className="text-lg text-foreground/85 md:text-xl">{item}</span>
-                </div>
-                <ArrowUpRight className="mr-0 h-5 w-5 text-muted-foreground transition group-hover:text-ochre md:mr-8" />
+                <span className="font-display text-xl text-ochre md:text-2xl">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <span className="text-lg text-foreground/85 md:text-xl">{item}</span>
               </li>
             ))}
           </ul>

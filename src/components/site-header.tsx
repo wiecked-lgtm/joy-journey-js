@@ -2,10 +2,13 @@ import { Link } from "@tanstack/react-router";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 
+// Leistungen ist vorübergehend nicht verlinkt.
+// Zum Wiedereinblenden einfach die auskommentierte Zeile wieder aktivieren
+// (die beiden Schrägstriche am Zeilenanfang entfernen).
 const nav = [
   { to: "/", label: "Home" },
   { to: "/ueber-mich", label: "Über mich" },
-  { to: "/leistungen", label: "Leistungen" },
+  // { to: "/leistungen", label: "Leistungen" },
   { to: "/kontakt", label: "Kontakt" },
 ] as const;
 

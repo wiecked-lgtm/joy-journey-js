@@ -12,7 +12,9 @@ export function SiteFooter() {
             <ul className="mt-4 space-y-2 text-sm">
               <li><Link to="/" className="hover:text-ochre">Home</Link></li>
               <li><Link to="/ueber-mich" className="hover:text-ochre">Über mich</Link></li>
-              <li><Link to="/leistungen" className="hover:text-ochre">Leistungen</Link></li>
+              {/* Leistungen ist vorübergehend nicht verlinkt. Zum Wiedereinblenden
+                  die naechste Zeile wieder aktivieren. */}
+              {/* <li><Link to="/leistungen" className="hover:text-ochre">Leistungen</Link></li> */}
               <li><Link to="/kontakt" className="hover:text-ochre">Kontakt</Link></li>
             </ul>
           </div>

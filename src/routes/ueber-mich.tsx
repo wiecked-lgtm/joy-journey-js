@@ -9,13 +9,13 @@ export const Route = createFileRoute("/ueber-mich")({
       {
         name: "description",
         content:
-          "Über 15 Jahre Marketing-Strategin mit Fokus auf datengetriebene Kampagnen, KI und Automatisierung.",
+          "Über 15 Jahre Marketing und Kommunikation: Positionierung und Botschaft, Content und Media Relations, Performance-Kampagnen und Reporting.",
       },
       { property: "og:title", content: "Über mich | Stephanie Wieck" },
       {
         property: "og:description",
         content:
-          "Marketing-Strategin mit Fokus auf datengetriebenes Marketing, Performance und KI-Integration.",
+          "Marketing- und Kommunikationsstrategin: von der Botschaft über Content und Media Relations bis zur datengetriebenen Kampagne.",
       },
     ],
   }),
@@ -57,11 +57,9 @@ function UeberMich() {
               </p>
 
               <p>
-                Mein Fokus liegt auf datengetriebenem Marketing,
-                Performance-Kampagnen und der Integration moderner 
-                Automatisierungsprozesse in bestehende Teams und Workflows.
-                Ich unterstütze Unternehmen dabei, KI strategisch und
-                praxisnah in ihr Marketing zu integrieren.
+                Mein Fokus liegt auf Positionierung und Botschaft, auf Content
+                und Media Relations sowie auf datengetriebenen Kampagnen. Wo es
+                sinnvoll ist, baue ich Abläufe, die eurem Team Arbeit abnehmen.
               </p>
 
               <p>
@@ -93,7 +91,7 @@ function UeberMich() {
             {
               k: "02",
               t: "Umsetzung",
-              d: "Von der Prozess-Optimierung bis hin zu Automatisierungen: konkrete Workflows, die euer Team sofort nutzen kann.",
+              d: "Von der Redaktionsplanung bis zur Kampagne: konkrete Abläufe, die euer Team sofort nutzen kann.",
             },
             {
               k: "03",

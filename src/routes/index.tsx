@@ -9,14 +9,14 @@ export const Route = createFileRoute("/")({
 });
 
 const capabilities = [
-  "Content-Workflows",
+  "Positionierung, Messaging und Narrativ",
+  "PR und Media Relations",
+  "Content-Strategie und Redaktionsplanung",
   "Performance Marketing & Paid Ads",
-  "SEO- und Content-Systeme",
-  "Newsletter- und CRM-Automatisierungen",
-  "Research- und Analyseprozesse",
-  "Reporting-Automatisierungen",
-  "Funnel- und Conversion-Optimierung",
+  "SEO und organische Sichtbarkeit",
+  "Newsletter und CRM",
   "Social Media & Kampagnenproduktion",
+  "Reporting und Analyse",
 ];
 
 function Home() {
@@ -37,7 +37,7 @@ function Home() {
           <div className="max-w-4xl animate-fade-up">
             <div className="inline-flex items-center gap-2 rounded-full border border-border bg-background/60 px-4 py-1.5 text-xs uppercase tracking-[0.22em] text-muted-foreground backdrop-blur">
               <span className="h-1.5 w-1.5 rounded-full bg-ochre" />
-              Marketing · Kommunikation · KI
+              Kommunikation · Content · Performance
             </div>
             <h1 className="mt-8 font-display text-5xl leading-[1.05] text-ink md:text-7xl lg:text-[5.5rem]">
               Klar in der{" "}
@@ -46,9 +46,9 @@ function Home() {
               Sauber in der Umsetzung.
             </h1>
             <p className="mt-8 max-w-2xl text-lg leading-relaxed text-foreground/75 md:text-xl">
-              Ich verstärke Marketing- und Kommunikationsteams oder übernehme ihre Führung, 
-              wenn Strukturen fehlen. Von der Botschaft über Paid-Kampagnen bis zum Reporting: 
-              strategisch klar, hands-on umgesetzt und bei Bedarf KI-gestützt.
+              Ich verstärke Marketing- und Kommunikationsteams oder übernehme ihre Führung,
+              wenn Strukturen fehlen. Von der Botschaft über Paid-Kampagnen bis zum Reporting:
+              strategisch klar und hands-on umgesetzt.
             </p>
             <div className="mt-10 flex flex-wrap items-center gap-4">
               <Link
@@ -93,9 +93,9 @@ function Home() {
               hands-on maßgeschneiderte Prozesse um.
             </p>
             <p>
-              Mein Fokus liegt auf der Entwicklung passgenauer Botschaften, 
-              datengetriebenem Marketing und bei Bedarf der Integration  
-              von Automatisierungsprozessen in bestehende Teams und Workflows.
+              Mein Fokus liegt auf der Entwicklung passgenauer Botschaften,
+              auf Content und Media Relations sowie auf datengetriebenen
+              Kampagnen in bestehenden Teams und Strukturen.
             </p>
             <div>
               <Link
@@ -118,7 +118,7 @@ function Home() {
               Typische Einsatzbereiche
             </div>
             <h2 className="mt-6 max-w-2xl font-display text-4xl leading-tight text-ink md:text-5xl">
-              Wo KI und Automation in eurem Marketing sofort wirken.
+              Wo Botschaft und Reichweite zusammenkommen.
             </h2>
           </div>
 

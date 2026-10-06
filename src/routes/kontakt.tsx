@@ -14,7 +14,7 @@ export const Route = createFileRoute("/kontakt")({
       {
         property: "og:description",
         content:
-          "Schreib mir oder buche direkt ein kostenloses 30-Minuten Erstgespräch.",
+          "Schreib mir oder buche direkt ein kostenloses 30-Minuten Erstgespräch zu Kommunikation, Content und Marketing.",
       },
     ],
   }),
@@ -30,13 +30,13 @@ function Kontakt() {
             Kontakt
           </div>
           <h1 className="mt-6 font-display text-5xl leading-[1.05] text-ink md:text-7xl">
-            Bereit für{" "}
-            <span className="italic text-ochre">effizienteres</span> Marketing?
+            Kurzes Gespräch,{" "}
+            <span className="italic text-ochre">klare</span> Einschätzung.
           </h1>
           <p className="mt-8 max-w-lg text-lg leading-relaxed text-foreground/80">
-            Du suchst eine erfahrene, hands-on Marketing-Strategin mit den richtigen
-            Skills? Schreib mir, wir finden gemeinsam heraus, wie ich dich in deinem
-            Projekt unterstützen kann.
+            Ob Positionierung und Botschaft, Content und Kampagnen oder Reporting:
+            Schreib mir kurz, worum es geht. Im Gespräch klären wir, wie ich am
+            besten unterstütze, als Projekt, laufendes Mandat oder Leitung auf Zeit.
           </p>
         </div>
 

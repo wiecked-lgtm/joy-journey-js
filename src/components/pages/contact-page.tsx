@@ -28,7 +28,14 @@ export function ContactPage({ lang }: { lang: Lang }) {
             <br />
             <span className="italic text-ochre">{t.h1.accent}</span> {t.h1.post}
           </h1>
-          <p className="mt-8 max-w-lg text-lg leading-relaxed text-foreground/80">{t.lead}</p>
+          {/*
+            text-pretty verhindert, dass in der letzten Zeile ein einzelnes
+            Wort allein steht. Der Browser zieht dann lieber ein Wort aus der
+            vorletzten Zeile mit nach unten.
+          */}
+          <p className="mt-8 max-w-lg text-pretty text-lg leading-relaxed text-foreground/80">
+            {t.lead}
+          </p>
         </div>
 
         <div className="md:col-span-5 md:col-start-8">

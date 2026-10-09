@@ -17,8 +17,16 @@ export function ContactPage({ lang }: { lang: Lang }) {
           <div className="text-xs uppercase tracking-[0.22em] text-muted-foreground">
             {t.eyebrow}
           </div>
+          {/*
+            Fester Umbruch nach dem Komma. Ohne ihn umbricht der Satz je nach
+            Fensterbreite mitten im Satzteil und die Zeilen laufen treppenartig
+            auseinander. Mit dem Umbruch stehen beide Haelften sauber
+            untereinander, in beiden Sprachen.
+          */}
           <h1 className="mt-6 font-display text-5xl leading-[1.05] text-ink md:text-7xl">
-            {t.h1.pre} <span className="italic text-ochre">{t.h1.accent}</span> {t.h1.post}
+            {t.h1.pre}
+            <br />
+            <span className="italic text-ochre">{t.h1.accent}</span> {t.h1.post}
           </h1>
           <p className="mt-8 max-w-lg text-lg leading-relaxed text-foreground/80">{t.lead}</p>
         </div>

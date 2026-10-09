@@ -108,7 +108,7 @@ export const en: Content = {
         "Send me a message or book a free 30-minute initial consultation on communication, content, and marketing.",
     },
     eyebrow: "Contact",
-    h1: { pre: "A brief conversation,", accent: "a clear", post: "assessment." },
+    h1: { pre: "A quick call,", accent: "a clear", post: "answer." },
     lead: "Whether it is positioning and messaging, content and campaigns, or reporting: Send me a quick note explaining what it is about. We will discuss how I can best support you, whether as a project, an ongoing retainer, or on an interim basis.",
     cardTitle: "Direct Line",
     mailLabel: "Email",

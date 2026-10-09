@@ -92,6 +92,27 @@
     font-variation-settings: "opsz" 96, "SOFT" 50;
     letter-spacing: -0.02em;
   }
+
+  /*
+    Zeilenumbruch fuer die ganze Website.
+
+    pretty  = kein einzelnes Wort allein in der letzten Zeile. Der Browser
+              zieht dann lieber ein Wort aus der vorletzten Zeile mit nach
+              unten. Fuer Fliesstext.
+    balance = alle Zeilen moeglichst gleich lang, statt einer langen und
+              einem kurzen Rest. Fuer Ueberschriften, die ohnehin nur
+              wenige Zeilen haben.
+
+    Aeltere Browser kennen beides nicht und umbrechen wie bisher. Es geht
+    also nichts kaputt, es wird nur dort schoener, wo es unterstuetzt wird.
+  */
+  p, li, blockquote, figcaption {
+    text-wrap: pretty;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+  }
 }
 
 @utility container-prose {

@@ -9,31 +9,19 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as UeberMichRouteImport } from './routes/ueber-mich'
-import { Route as LeistungenRouteImport } from './routes/leistungen'
-import { Route as KontaktRouteImport } from './routes/kontakt'
-import { Route as ImpressumRouteImport } from './routes/impressum'
-import { Route as DatenschutzRouteImport } from './routes/datenschutz'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as DatenschutzRouteImport } from './routes/datenschutz'
+import { Route as ImpressumRouteImport } from './routes/impressum'
+import { Route as KontaktRouteImport } from './routes/kontakt'
+import { Route as LeistungenRouteImport } from './routes/leistungen'
+import { Route as UeberMichRouteImport } from './routes/ueber-mich'
+import { Route as EnIndexRouteImport } from './routes/en/index'
+import { Route as EnAboutRouteImport } from './routes/en/about'
+import { Route as EnContactRouteImport } from './routes/en/contact'
 
-const UeberMichRoute = UeberMichRouteImport.update({
-  id: '/ueber-mich',
-  path: '/ueber-mich',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const LeistungenRoute = LeistungenRouteImport.update({
-  id: '/leistungen',
-  path: '/leistungen',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const KontaktRoute = KontaktRouteImport.update({
-  id: '/kontakt',
-  path: '/kontakt',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ImpressumRoute = ImpressumRouteImport.update({
-  id: '/impressum',
-  path: '/impressum',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const DatenschutzRoute = DatenschutzRouteImport.update({
@@ -41,9 +29,39 @@ const DatenschutzRoute = DatenschutzRouteImport.update({
   path: '/datenschutz',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const ImpressumRoute = ImpressumRouteImport.update({
+  id: '/impressum',
+  path: '/impressum',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const KontaktRoute = KontaktRouteImport.update({
+  id: '/kontakt',
+  path: '/kontakt',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LeistungenRoute = LeistungenRouteImport.update({
+  id: '/leistungen',
+  path: '/leistungen',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const UeberMichRoute = UeberMichRouteImport.update({
+  id: '/ueber-mich',
+  path: '/ueber-mich',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EnIndexRoute = EnIndexRouteImport.update({
+  id: '/en/',
+  path: '/en/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EnAboutRoute = EnAboutRouteImport.update({
+  id: '/en/about',
+  path: '/en/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EnContactRoute = EnContactRouteImport.update({
+  id: '/en/contact',
+  path: '/en/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -54,6 +72,9 @@ export interface FileRoutesByFullPath {
   '/kontakt': typeof KontaktRoute
   '/leistungen': typeof LeistungenRoute
   '/ueber-mich': typeof UeberMichRoute
+  '/en/about': typeof EnAboutRoute
+  '/en/contact': typeof EnContactRoute
+  '/en/': typeof EnIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -62,6 +83,9 @@ export interface FileRoutesByTo {
   '/kontakt': typeof KontaktRoute
   '/leistungen': typeof LeistungenRoute
   '/ueber-mich': typeof UeberMichRoute
+  '/en/about': typeof EnAboutRoute
+  '/en/contact': typeof EnContactRoute
+  '/en': typeof EnIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -71,6 +95,9 @@ export interface FileRoutesById {
   '/kontakt': typeof KontaktRoute
   '/leistungen': typeof LeistungenRoute
   '/ueber-mich': typeof UeberMichRoute
+  '/en/about': typeof EnAboutRoute
+  '/en/contact': typeof EnContactRoute
+  '/en/': typeof EnIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -81,6 +108,9 @@ export interface FileRouteTypes {
     | '/kontakt'
     | '/leistungen'
     | '/ueber-mich'
+    | '/en/about'
+    | '/en/contact'
+    | '/en/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -89,6 +119,9 @@ export interface FileRouteTypes {
     | '/kontakt'
     | '/leistungen'
     | '/ueber-mich'
+    | '/en/about'
+    | '/en/contact'
+    | '/en'
   id:
     | '__root__'
     | '/'
@@ -97,6 +130,9 @@ export interface FileRouteTypes {
     | '/kontakt'
     | '/leistungen'
     | '/ueber-mich'
+    | '/en/about'
+    | '/en/contact'
+    | '/en/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -106,36 +142,18 @@ export interface RootRouteChildren {
   KontaktRoute: typeof KontaktRoute
   LeistungenRoute: typeof LeistungenRoute
   UeberMichRoute: typeof UeberMichRoute
+  EnAboutRoute: typeof EnAboutRoute
+  EnContactRoute: typeof EnContactRoute
+  EnIndexRoute: typeof EnIndexRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/ueber-mich': {
-      id: '/ueber-mich'
-      path: '/ueber-mich'
-      fullPath: '/ueber-mich'
-      preLoaderRoute: typeof UeberMichRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/leistungen': {
-      id: '/leistungen'
-      path: '/leistungen'
-      fullPath: '/leistungen'
-      preLoaderRoute: typeof LeistungenRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/kontakt': {
-      id: '/kontakt'
-      path: '/kontakt'
-      fullPath: '/kontakt'
-      preLoaderRoute: typeof KontaktRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/impressum': {
-      id: '/impressum'
-      path: '/impressum'
-      fullPath: '/impressum'
-      preLoaderRoute: typeof ImpressumRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/datenschutz': {
@@ -145,11 +163,53 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof DatenschutzRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/impressum': {
+      id: '/impressum'
+      path: '/impressum'
+      fullPath: '/impressum'
+      preLoaderRoute: typeof ImpressumRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/kontakt': {
+      id: '/kontakt'
+      path: '/kontakt'
+      fullPath: '/kontakt'
+      preLoaderRoute: typeof KontaktRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/leistungen': {
+      id: '/leistungen'
+      path: '/leistungen'
+      fullPath: '/leistungen'
+      preLoaderRoute: typeof LeistungenRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ueber-mich': {
+      id: '/ueber-mich'
+      path: '/ueber-mich'
+      fullPath: '/ueber-mich'
+      preLoaderRoute: typeof UeberMichRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/en/': {
+      id: '/en/'
+      path: '/en'
+      fullPath: '/en/'
+      preLoaderRoute: typeof EnIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/en/about': {
+      id: '/en/about'
+      path: '/en/about'
+      fullPath: '/en/about'
+      preLoaderRoute: typeof EnAboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/en/contact': {
+      id: '/en/contact'
+      path: '/en/contact'
+      fullPath: '/en/contact'
+      preLoaderRoute: typeof EnContactRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -162,7 +222,20 @@ const rootRouteChildren: RootRouteChildren = {
   KontaktRoute: KontaktRoute,
   LeistungenRoute: LeistungenRoute,
   UeberMichRoute: UeberMichRoute,
+  EnAboutRoute: EnAboutRoute,
+  EnContactRoute: EnContactRoute,
+  EnIndexRoute: EnIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}

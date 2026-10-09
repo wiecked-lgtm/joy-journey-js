@@ -1,27 +1,42 @@
 import { Link } from "@tanstack/react-router";
 
+import { content, PATHS, useLang } from "../content";
+
+// ===========================================================================
+// FUSSZEILE
+//
+// Impressum und Datenschutz bleiben auf Deutsch. Das ist rechtlich die
+// massgebliche Fassung, deshalb sind sie in der englischen Navigation als
+// "(German)" gekennzeichnet.
+// ===========================================================================
+
 export function SiteFooter() {
+  const lang = useLang();
+  const t = content(lang).footer;
+  const nav = content(lang).nav;
+  const p = PATHS[lang];
+
   return (
     <footer className="mt-32 border-t border-border/60 bg-cream">
       <div className="container-prose py-16">
         <div className="grid gap-12 md:grid-cols-3">
           <div>
             <div className="text-xs uppercase tracking-[0.22em] text-muted-foreground">
-              Navigation
+              {t.navigation}
             </div>
             <ul className="mt-4 space-y-2 text-sm">
-              <li><Link to="/" className="hover:text-ochre">Home</Link></li>
-              <li><Link to="/ueber-mich" className="hover:text-ochre">Über mich</Link></li>
+              <li><Link to={p.home} className="hover:text-ochre">{nav.home}</Link></li>
+              <li><Link to={p.about} className="hover:text-ochre">{nav.about}</Link></li>
               {/* Leistungen ist vorübergehend nicht verlinkt. Zum Wiedereinblenden
                   die naechste Zeile wieder aktivieren. */}
               {/* <li><Link to="/leistungen" className="hover:text-ochre">Leistungen</Link></li> */}
-              <li><Link to="/kontakt" className="hover:text-ochre">Kontakt</Link></li>
+              <li><Link to={p.contact} className="hover:text-ochre">{nav.contact}</Link></li>
             </ul>
           </div>
 
           <div>
             <div className="text-xs uppercase tracking-[0.22em] text-muted-foreground">
-              Kontakt
+              {t.contact}
             </div>
             <ul className="mt-4 space-y-2 text-sm">
               <li>
@@ -44,11 +59,11 @@ export function SiteFooter() {
 
           <div>
             <div className="text-xs uppercase tracking-[0.22em] text-muted-foreground">
-              Rechtliches
+              {t.legal}
             </div>
             <ul className="mt-4 space-y-2 text-sm">
-              <li><Link to="/impressum" className="hover:text-ochre">Impressum</Link></li>
-              <li><Link to="/datenschutz" className="hover:text-ochre">Datenschutz</Link></li>
+              <li><Link to="/impressum" className="hover:text-ochre">{t.imprint}</Link></li>
+              <li><Link to="/datenschutz" className="hover:text-ochre">{t.privacy}</Link></li>
               {/*
                 Pflicht: Die Einwilligung muss so leicht widerrufbar sein, wie
                 sie erteilt wurde. Dieser Link oeffnet den Cookiebot-Dialog
@@ -61,7 +76,7 @@ export function SiteFooter() {
                   onClick={() => window.Cookiebot?.renew()}
                   className="text-left hover:text-ochre"
                 >
-                  Cookie-Einstellungen
+                  {t.cookies}
                 </button>
               </li>
             </ul>
@@ -69,18 +84,13 @@ export function SiteFooter() {
         </div>
 
         <div className="mt-16 flex flex-col items-center gap-6 border-t border-border/60 pt-12">
-          {/*
-            Hoehe von h-28/h-32 auf h-24/h-28 reduziert: Die neue Logodatei
-            hat keinen eingebackenen Leerraum mehr, dadurch wirkt das Logo
-            bei gleicher CSS-Hoehe groesser.
-          */}
           <img
             src="/Logo_Wide_Transparent.svg"
             alt="Wieck Marketing Strategy"
             className="h-24 w-auto md:h-28"
           />
           <div className="text-xs text-muted-foreground">
-            © {new Date().getFullYear()} Stephanie Wieck. Alle Rechte vorbehalten.
+            © {new Date().getFullYear()} Stephanie Wieck. {t.rights}
           </div>
         </div>
       </div>

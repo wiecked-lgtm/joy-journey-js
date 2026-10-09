@@ -13,6 +13,7 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { SiteHeader } from "../components/site-header";
 import { SiteFooter } from "../components/site-footer";
+import { useLang } from "../content";
 
 // ===========================================================================
 // TRACKING & CONSENT
@@ -235,7 +236,14 @@ function useSpaPageViews() {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  const lang = useLang();
   useSpaPageViews();
+
+  // Die Sprachangabe des Dokuments nachziehen. Wichtig fuer Vorlesesoftware,
+  // fuer die Silbentrennung im Browser und fuer Suchmaschinen.
+  useEffect(() => {
+    document.documentElement.lang = lang;
+  }, [lang]);
 
   return (
     <QueryClientProvider client={queryClient}>

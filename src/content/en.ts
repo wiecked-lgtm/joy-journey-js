@@ -109,7 +109,7 @@ export const en: Content = {
     },
     eyebrow: "Contact",
     h1: { pre: "A quick call,", accent: "a clear", post: "answer." },
-    lead: "Whether it is positioning and messaging, content and campaigns, or reporting: Send me a quick note explaining what it is about. We will discuss how I can best support you, whether as a project, an ongoing retainer, or on an interim basis.",
+    lead: "Whether it is positioning and messaging, content and campaigns, or reporting: Send me a quick note explaining what it is about. We will discuss how I can best support you, whether as a project, an ongoing retainer, or in a leadership role.",
     cardTitle: "Direct Line",
     mailLabel: "Email",
     linkedinLabel: "LinkedIn",

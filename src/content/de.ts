@@ -116,7 +116,7 @@ export const de = {
     },
     eyebrow: "Kontakt",
     h1: { pre: "Kurzes Gespräch,", accent: "klare", post: "Einschätzung." },
-    lead: "Ob Positionierung und Botschaft, Content und Kampagnen oder Reporting: Schreib mir kurz, worum es geht. Im Gespräch klären wir, wie ich am besten unterstütze, als Projekt, laufendes Mandat oder Leitung auf Zeit.",
+    lead: "Ob Positionierung und Botschaft, Content und Kampagnen oder Reporting: Schreib mir kurz, worum es geht. Im Gespräch klären wir, wie ich am besten unterstütze, als Projekt, laufendes Mandat oder in einer Führungsrolle.",
     cardTitle: "Direkter Draht",
     mailLabel: "E-Mail",
     linkedinLabel: "LinkedIn",

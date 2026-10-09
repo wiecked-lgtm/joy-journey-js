@@ -1,8 +1,69 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Globe } from "lucide-react";
 
-import { content, otherLangHref, PATHS, useLang } from "../content";
+import { content, otherLangHref, PATHS, useLang, type Lang } from "../content";
+
+// ===========================================================================
+// SPRACHUMSCHALTER
+//
+// Beide Sprachen sind sichtbar, die aktive ist als gefuellte Pille
+// hervorgehoben. Dadurch ist auf einen Blick erkennbar, dass es sich um
+// eine Auswahl handelt und welche Sprache gerade laeuft.
+//
+// Bewusst normale Links und keine Link-Bausteine: So laedt die Seite einmal
+// komplett neu und die Sprachangabe im Browser stimmt sofort.
+// ===========================================================================
+
+function LanguageSwitch({
+  lang,
+  switchHref,
+  label,
+}: {
+  lang: Lang;
+  switchHref: string;
+  label: string;
+}) {
+  const base =
+    "rounded-full px-2.5 py-1 text-xs uppercase tracking-[0.14em] transition";
+  const active = "bg-ink text-cream";
+  const inactive = "text-muted-foreground hover:text-ink";
+
+  const de =
+    lang === "de" ? (
+      <span className={`${base} ${active}`} aria-current="true">
+        DE
+      </span>
+    ) : (
+      <a href={switchHref} className={`${base} ${inactive}`} title={label}>
+        DE
+      </a>
+    );
+
+  const en =
+    lang === "en" ? (
+      <span className={`${base} ${active}`} aria-current="true">
+        EN
+      </span>
+    ) : (
+      <a href={switchHref} className={`${base} ${inactive}`} title={label}>
+        EN
+      </a>
+    );
+
+  return (
+    <div
+      className="flex items-center gap-1 rounded-full border border-border bg-background/60 p-1 pl-2.5"
+      role="group"
+      aria-label={label}
+    >
+      <Globe className="h-3.5 w-3.5 shrink-0 text-muted-foreground" aria-hidden />
+      {de}
+      {en}
+    </div>
+  );
+}
+
 
 // ===========================================================================
 // SEITENKOPF
@@ -54,19 +115,8 @@ export function SiteHeader() {
           ))}
         </nav>
 
-        <div className="hidden items-center gap-6 md:flex">
-          {/*
-            Sprachumschalter. Bewusst ein normaler Link und kein Link-Baustein:
-            So laedt die Seite einmal komplett neu und die Sprachangabe im
-            Browser stimmt sofort.
-          */}
-          <a
-            href={switchHref}
-            className="text-xs uppercase tracking-[0.18em] text-muted-foreground transition hover:text-ink"
-            aria-label={t.nav.switchLabel}
-          >
-            {lang === "de" ? "EN" : "DE"}
-          </a>
+        <div className="hidden items-center gap-5 md:flex">
+          <LanguageSwitch lang={lang} switchHref={switchHref} label={t.nav.switchLabel} />
 
           <Link
             to={p.contact}
@@ -76,14 +126,8 @@ export function SiteHeader() {
           </Link>
         </div>
 
-        <div className="flex items-center gap-4 md:hidden">
-          <a
-            href={switchHref}
-            className="text-xs uppercase tracking-[0.18em] text-muted-foreground"
-            aria-label={t.nav.switchLabel}
-          >
-            {lang === "de" ? "EN" : "DE"}
-          </a>
+        <div className="flex items-center gap-3 md:hidden">
+          <LanguageSwitch lang={lang} switchHref={switchHref} label={t.nav.switchLabel} />
           <button
             className="-mr-2 p-2"
             onClick={() => setOpen((v) => !v)}

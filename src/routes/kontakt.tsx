@@ -36,7 +36,7 @@ function Kontakt() {
           <p className="mt-8 max-w-lg text-lg leading-relaxed text-foreground/80">
             Ob Positionierung und Botschaft, Content und Kampagnen oder Reporting:
             Schreib mir kurz, worum es geht. Im Gespräch klären wir, wie ich am
-            besten unterstütze, als Projekt, laufendes Mandat oder Leitung.
+            besten unterstütze, als Projekt, laufendes Mandat oder in einer Führungsrolle.
           </p>
         </div>
 

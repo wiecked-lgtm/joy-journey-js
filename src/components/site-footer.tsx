@@ -86,7 +86,7 @@ export function SiteFooter() {
         <div className="mt-16 flex flex-col items-center gap-6 border-t border-border/60 pt-12">
           <img
             src="/Logo_Wide_Transparent.svg"
-            alt="Wieck Marketing Strategy"
+            alt="Wieck Marketing & Kommunikation"
             className="h-24 w-auto md:h-28"
           />
           <div className="text-xs text-muted-foreground">

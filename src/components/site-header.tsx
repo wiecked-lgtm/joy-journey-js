@@ -94,10 +94,10 @@ export function SiteHeader() {
   return (
     <header className="sticky top-0 z-40 border-b border-border/60 bg-background/80 backdrop-blur-md">
       <div className="container-prose flex h-20 items-center justify-between">
-        <Link to={p.home} className="flex items-center" aria-label="Wieck Marketing Strategy">
+        <Link to={p.home} className="flex items-center" aria-label="Wieck Marketing & Kommunikation">
           <img
             src="/svg-logo_neu.svg"
-            alt="Wieck Marketing Strategy"
+            alt="Wieck Marketing & Kommunikation"
             className="h-10 w-auto md:h-12"
           />
         </Link>

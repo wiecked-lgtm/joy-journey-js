@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as DatenschutzRouteImport } from './routes/datenschutz'
+import { Route as EtsyWerbeCheckRouteImport } from './routes/etsy-werbe-check'
 import { Route as ImpressumRouteImport } from './routes/impressum'
 import { Route as KontaktRouteImport } from './routes/kontakt'
 import { Route as LeistungenRouteImport } from './routes/leistungen'
@@ -28,6 +29,11 @@ const IndexRoute = IndexRouteImport.update({
 const DatenschutzRoute = DatenschutzRouteImport.update({
   id: '/datenschutz',
   path: '/datenschutz',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EtsyWerbeCheckRoute = EtsyWerbeCheckRouteImport.update({
+  id: '/etsy-werbe-check',
+  path: '/etsy-werbe-check',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ImpressumRoute = ImpressumRouteImport.update({
@@ -74,6 +80,7 @@ const EnContactRoute = EnContactRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/datenschutz': typeof DatenschutzRoute
+  '/etsy-werbe-check': typeof EtsyWerbeCheckRoute
   '/impressum': typeof ImpressumRoute
   '/kontakt': typeof KontaktRoute
   '/leistungen': typeof LeistungenRoute
@@ -86,6 +93,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/datenschutz': typeof DatenschutzRoute
+  '/etsy-werbe-check': typeof EtsyWerbeCheckRoute
   '/impressum': typeof ImpressumRoute
   '/kontakt': typeof KontaktRoute
   '/leistungen': typeof LeistungenRoute
@@ -99,6 +107,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/datenschutz': typeof DatenschutzRoute
+  '/etsy-werbe-check': typeof EtsyWerbeCheckRoute
   '/impressum': typeof ImpressumRoute
   '/kontakt': typeof KontaktRoute
   '/leistungen': typeof LeistungenRoute
@@ -113,6 +122,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/datenschutz'
+    | '/etsy-werbe-check'
     | '/impressum'
     | '/kontakt'
     | '/leistungen'
@@ -125,6 +135,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/datenschutz'
+    | '/etsy-werbe-check'
     | '/impressum'
     | '/kontakt'
     | '/leistungen'
@@ -137,6 +148,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/datenschutz'
+    | '/etsy-werbe-check'
     | '/impressum'
     | '/kontakt'
     | '/leistungen'
@@ -150,6 +162,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   DatenschutzRoute: typeof DatenschutzRoute
+  EtsyWerbeCheckRoute: typeof EtsyWerbeCheckRoute
   ImpressumRoute: typeof ImpressumRoute
   KontaktRoute: typeof KontaktRoute
   LeistungenRoute: typeof LeistungenRoute
@@ -174,6 +187,13 @@ declare module '@tanstack/react-router' {
       path: '/datenschutz'
       fullPath: '/datenschutz'
       preLoaderRoute: typeof DatenschutzRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/etsy-werbe-check': {
+      id: '/etsy-werbe-check'
+      path: '/etsy-werbe-check'
+      fullPath: '/etsy-werbe-check'
+      preLoaderRoute: typeof EtsyWerbeCheckRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/impressum': {
@@ -238,6 +258,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   DatenschutzRoute: DatenschutzRoute,
+  EtsyWerbeCheckRoute: EtsyWerbeCheckRoute,
   ImpressumRoute: ImpressumRoute,
   KontaktRoute: KontaktRoute,
   LeistungenRoute: LeistungenRoute,

@@ -15,6 +15,7 @@ import { Route as ImpressumRouteImport } from './routes/impressum'
 import { Route as KontaktRouteImport } from './routes/kontakt'
 import { Route as LeistungenRouteImport } from './routes/leistungen'
 import { Route as UeberMichRouteImport } from './routes/ueber-mich'
+import { Route as ApiWerbeCheckRouteImport } from './routes/api/werbe-check'
 import { Route as EnIndexRouteImport } from './routes/en/index'
 import { Route as EnAboutRouteImport } from './routes/en/about'
 import { Route as EnContactRouteImport } from './routes/en/contact'
@@ -49,6 +50,11 @@ const UeberMichRoute = UeberMichRouteImport.update({
   path: '/ueber-mich',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiWerbeCheckRoute = ApiWerbeCheckRouteImport.update({
+  id: '/api/werbe-check',
+  path: '/api/werbe-check',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const EnIndexRoute = EnIndexRouteImport.update({
   id: '/en/',
   path: '/en/',
@@ -72,6 +78,7 @@ export interface FileRoutesByFullPath {
   '/kontakt': typeof KontaktRoute
   '/leistungen': typeof LeistungenRoute
   '/ueber-mich': typeof UeberMichRoute
+  '/api/werbe-check': typeof ApiWerbeCheckRoute
   '/en/about': typeof EnAboutRoute
   '/en/contact': typeof EnContactRoute
   '/en/': typeof EnIndexRoute
@@ -83,6 +90,7 @@ export interface FileRoutesByTo {
   '/kontakt': typeof KontaktRoute
   '/leistungen': typeof LeistungenRoute
   '/ueber-mich': typeof UeberMichRoute
+  '/api/werbe-check': typeof ApiWerbeCheckRoute
   '/en/about': typeof EnAboutRoute
   '/en/contact': typeof EnContactRoute
   '/en': typeof EnIndexRoute
@@ -95,6 +103,7 @@ export interface FileRoutesById {
   '/kontakt': typeof KontaktRoute
   '/leistungen': typeof LeistungenRoute
   '/ueber-mich': typeof UeberMichRoute
+  '/api/werbe-check': typeof ApiWerbeCheckRoute
   '/en/about': typeof EnAboutRoute
   '/en/contact': typeof EnContactRoute
   '/en/': typeof EnIndexRoute
@@ -108,6 +117,7 @@ export interface FileRouteTypes {
     | '/kontakt'
     | '/leistungen'
     | '/ueber-mich'
+    | '/api/werbe-check'
     | '/en/about'
     | '/en/contact'
     | '/en/'
@@ -119,6 +129,7 @@ export interface FileRouteTypes {
     | '/kontakt'
     | '/leistungen'
     | '/ueber-mich'
+    | '/api/werbe-check'
     | '/en/about'
     | '/en/contact'
     | '/en'
@@ -130,6 +141,7 @@ export interface FileRouteTypes {
     | '/kontakt'
     | '/leistungen'
     | '/ueber-mich'
+    | '/api/werbe-check'
     | '/en/about'
     | '/en/contact'
     | '/en/'
@@ -142,6 +154,7 @@ export interface RootRouteChildren {
   KontaktRoute: typeof KontaktRoute
   LeistungenRoute: typeof LeistungenRoute
   UeberMichRoute: typeof UeberMichRoute
+  ApiWerbeCheckRoute: typeof ApiWerbeCheckRoute
   EnAboutRoute: typeof EnAboutRoute
   EnContactRoute: typeof EnContactRoute
   EnIndexRoute: typeof EnIndexRoute
@@ -191,6 +204,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof UeberMichRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/werbe-check': {
+      id: '/api/werbe-check'
+      path: '/api/werbe-check'
+      fullPath: '/api/werbe-check'
+      preLoaderRoute: typeof ApiWerbeCheckRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/en/': {
       id: '/en/'
       path: '/en'
@@ -222,6 +242,7 @@ const rootRouteChildren: RootRouteChildren = {
   KontaktRoute: KontaktRoute,
   LeistungenRoute: LeistungenRoute,
   UeberMichRoute: UeberMichRoute,
+  ApiWerbeCheckRoute: ApiWerbeCheckRoute,
   EnAboutRoute: EnAboutRoute,
   EnContactRoute: EnContactRoute,
   EnIndexRoute: EnIndexRoute,

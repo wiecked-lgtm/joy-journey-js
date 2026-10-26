@@ -189,7 +189,7 @@ footer{font-size:13px;color:var(--muted);text-align:center}
   const USD_EUR = 0.86, VAT = 0.19;
   // Etsy-Link: hier deinen Listing-Link mit Spare-mit-Links eintragen
   const ETSY_URL = 'https://www.etsy.com';
-  let subscribed = false, emailGiven = false;
+  let subscribed = false, emailGiven = false, teaser = false, failed = false;
   function subscribe(email, fname, extra){
     return fetch('/api/werbe-check', {
       method: 'POST',
@@ -198,9 +198,8 @@ footer{font-size:13px;color:var(--muted);text-align:center}
     }).then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); })
       .catch(err => {
         console.error(err);
-        const box = $('sendmsg');
-        if (box) box.innerHTML = '<h3 style="color:var(--red)">Das hat leider nicht geklappt</h3><p>Dein Ergebnis siehst du hier trotzdem. Probier es später noch einmal oder schreib mir an <a href="mailto:mail@stephanie-wieck.com" style="color:var(--pine)">mail@stephanie-wieck.com</a>.</p>';
-        subscribed = false;
+        // Versand fehlgeschlagen: ganzes Ergebnis direkt zeigen, damit nichts verloren geht
+        failed = true; subscribed = true; render(); show(6);
       });
   }
   const $ = id => document.getElementById(id);
@@ -236,7 +235,7 @@ footer{font-size:13px;color:var(--muted);text-align:center}
     $('back').hidden = n === 1;
     $('next').textContent = n === 5 ? 'Ergebnis anzeigen' : (n === 6 ? 'Anderes Produkt prüfen' : 'Weiter');
     $('back').textContent = n === 6 ? 'Zahlen ändern' : 'Zurück';
-    $('cta').hidden = n !== 6;
+    $('cta').hidden = n !== 6 || teaser;
     $('err').hidden = true;
   }
   function calc(){
@@ -279,9 +278,33 @@ footer{font-size:13px;color:var(--muted);text-align:center}
     const monthLine = (c.roas !== null && c.profit > 0)
       ? '<div class="stat ' + (c.month >= 0 ? 'hl' : '') + '"><div>Ergebnis der Anzeige, letzter Monat</div><strong style="color:var(' + (c.month >= 0 ? '--green' : '--red') + ')">' + (c.month >= 0 ? '+ ' : '− ') + eur(Math.abs(c.month)) + '</strong></div>' : '';
     const sent = !subscribed && emailGiven;
+    teaser = sent;
+    if (sent){
+      // Vorschau: nur die Kernaussage, die ganze Rechnung kommt per E-Mail
+      let hint, detail = '';
+      if (c.profit <= 0){
+        hint = 'dass bei diesem Produkt schon ohne Werbung nichts übrig bleibt.';
+        detail = 'Wie hoch der Verlust pro Verkauf ist und was du tun kannst, steht in der E-Mail.';
+      } else if (c.roas === null){
+        hint = 'ab welchem ROAS sich Werbung für dieses Produkt lohnen würde.';
+        detail = 'Die genaue Grenze und deine Rechnung pro Verkauf stehen in der E-Mail.';
+      } else if (c.roas < c.be){
+        hint = 'dass diese Anzeige dich zu viel Geld kostet.';
+        detail = 'Dein ROAS liegt bei ' + num(c.roas) + '. Damit du verdienst, bräuchtest du jedoch mindestens ' + num(c.be) + '.';
+      } else if (c.roas < c.be * 1.2){
+        hint = 'dass diese Anzeige nur knapp über der Grenze liegt.';
+        detail = 'Dein ROAS liegt bei ' + num(c.roas) + ', deine Grenze bei ' + num(c.be) + '.';
+      } else {
+        hint = 'dass sich diese Anzeige lohnt.';
+        detail = 'Dein ROAS von ' + num(c.roas) + ' liegt deutlich über deiner Grenze von ' + num(c.be) + '.';
+      }
+      $('result').innerHTML =
+        '<div class="stepmeta">Dein Ergebnis</div>' +
+        '<div class="verdict ' + cls + '"><span class="dot" aria-hidden="true"></span><div id="sendmsg"><h3 style="color:var(--pine)">Dein Ergebnis ist unterwegs</h3><p>Bestätige bitte zuerst deine Anmeldung in der E-Mail, die gerade an ' + $('email').value.trim().replace(/[<>&"]/g,'') + ' gegangen ist. Danach schicke ich dir dein Ergebnis. Hier siehst du schon vorab, ' + hint + '</p><p>' + detail + '</p></div></div>';
+    } else
     $('result').innerHTML =
       '<div class="stepmeta">Dein Ergebnis</div>' +
-      (sent ? '<div class="verdict v-grey"><span class="dot" aria-hidden="true" style="background:var(--green)"></span><div id="sendmsg"><h3 style="color:var(--pine)">Dein Ergebnis ist unterwegs</h3><p>Bestätige bitte zuerst deine Anmeldung in der E-Mail, die gerade an ' + $('email').value.trim().replace(/[<>&"]/g,'') + ' gegangen ist. Danach schicke ich dir dein Ergebnis. Hier siehst du es schon vorab.</p></div></div>' : '') +
+      (failed ? '<div class="verdict v-grey"><span class="dot" aria-hidden="true" style="background:var(--red)"></span><div><h3 style="color:var(--red)">Die E-Mail konnte ich leider nicht verschicken</h3><p>Hier ist dein Ergebnis direkt. Probier die Anmeldung später noch einmal oder schreib mir an <a href="mailto:mail@stephanie-wieck.com" style="color:var(--pine)">mail@stephanie-wieck.com</a>.</p></div></div>' : '') +
       '<div class="verdict ' + cls + '"><span class="dot" aria-hidden="true"></span><div><h3>' + title + '</h3><p>' + text + '</p></div></div>' +
       '<div class="stats">' +
         '<div class="stat"><div>Break-even-ROAS</div><strong>' + (isFinite(c.be) ? num(c.be) : 'nicht erreichbar') + '</strong></div>' +

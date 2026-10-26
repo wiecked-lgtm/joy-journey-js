@@ -2,12 +2,381 @@
 <html lang="de">
 <head>
 <meta charset="utf-8">
-<meta name="robots" content="noindex">
-<meta http-equiv="refresh" content="0; url=/etsy-werbe-check">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Etsy-Werbe-Check: Lohnt sich deine Anzeige?</title>
+<meta name="description" content="Kostenloser Etsy-Werbe-Check: In fünf Schritten siehst du, ab welchem ROAS deine Etsy-Anzeige Gewinn bringt.">
+<link rel="icon" href="/favicon.ico">
 <link rel="canonical" href="https://www.stephanie-wieck.com/etsy-werbe-check">
-<title>Etsy-Werbe-Check</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap">
+<style>
+/* Layout: eine schmale Karte, Schritt für Schritt, Ergebnis als Ampel mit Zahlen darunter */
+:root{
+  --bg:#F6F8F7; --surface:#FFFFFF; --line:#DCE5E3; --fg:#1E3436; --muted:#4F6365;
+  --pine:#224D51; --pine-fg:#FFFFFF; --mint:#E3F4EA; --green:#1F7A55;
+  --sand:#FFF4D6; --sand-line:#D9B45B; --sand-fg:#6B4A00;
+  --red-bg:#F8E1DE; --red:#A3261D; --amber-bg:#FFF1CC; --amber:#8A5A00;
+  --input:#FFFFFF; --input-line:#B9C9C6; --focus:#1F7A55;
+  --font:'Manrope', system-ui, -apple-system, 'Segoe UI', sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#122224; --surface:#1A2F31; --line:#2C4447; --fg:#E6EFED; --muted:#A3B7B4;
+  --pine:#8DB5A6; --pine-fg:#0F1F21; --mint:#1D3A33; --green:#7FD1A8;
+  --sand:#3A3220; --sand-line:#9C8445; --sand-fg:#F0D58E;
+  --red-bg:#3E2422; --red:#F29A90; --amber-bg:#3A311B; --amber:#F0C46A;
+  --input:#14282A; --input-line:#3D575A; --focus:#7FD1A8; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#122224; --surface:#1A2F31; --line:#2C4447; --fg:#E6EFED; --muted:#A3B7B4;
+  --pine:#8DB5A6; --pine-fg:#0F1F21; --mint:#1D3A33; --green:#7FD1A8;
+  --sand:#3A3220; --sand-line:#9C8445; --sand-fg:#F0D58E;
+  --red-bg:#3E2422; --red:#F29A90; --amber-bg:#3A311B; --amber:#F0C46A;
+  --input:#14282A; --input-line:#3D575A; --focus:#7FD1A8; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--font);font-size:17px;line-height:1.55;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:32px 56px}
+.wrap{max-width:640px;margin:0 auto;display:flex;flex-direction:column;gap:24px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--pine)}
+.brand i{width:30px;height:30px;border-radius:8px;background:var(--pine);display:grid;place-items:center}
+.brand svg{stroke:var(--pine-fg)}
+h1{margin:0;font-size:clamp(30px,6vw,42px);line-height:1.1;letter-spacing:-.02em;color:var(--pine);text-wrap:balance}
+.lead{margin:8px 0 0;color:var(--muted);max-width:60ch}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px;display:flex;flex-direction:column;gap:20px}
+.progress{display:flex;gap:6px}
+.progress span{flex:1;height:6px;border-radius:99px;background:var(--line)}
+.progress span.on{background:var(--green)}
+.stepmeta{font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--green)}
+h2{margin:4px 0 0;font-size:26px;line-height:1.2;color:var(--pine);text-wrap:balance}
+.hint{margin:6px 0 0;color:var(--muted);font-size:15px}
+.fields{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:16px}
+.field{display:flex;flex-direction:column;gap:6px;min-width:0}
+.field label{font-weight:700;font-size:15px}
+.field small{color:var(--muted);font-size:13px}
+.money{position:relative}
+.money input{padding-right:34px}
+.money::after{content:"€";position:absolute;right:14px;top:50%;transform:translateY(-50%);color:var(--muted);font-weight:700}
+input[type=text],input[type=email]{font:inherit;font-size:17px;width:100%;padding:12px 14px;border:1.5px solid var(--input-line);border-radius:10px;background:var(--input);color:var(--fg);font-variant-numeric:tabular-nums}
+input:focus-visible,button:focus-visible,a:focus-visible,.choice input:focus-visible+span{outline:3px solid var(--focus);outline-offset:2px}
+.choices{display:grid;gap:12px}
+.choice{display:block;cursor:pointer}
+.choice input{position:absolute;opacity:0;pointer-events:none}
+.choice span{display:block;border:1.5px solid var(--input-line);border-radius:12px;padding:14px 16px;background:var(--input)}
+.choice b{display:block}
+.choice em{font-style:normal;color:var(--muted);font-size:14px}
+.choice input:checked+span{border-color:var(--green);background:var(--mint)}
+.err{color:var(--red);font-weight:700;font-size:15px;margin:0}
+.nav{display:flex;gap:12px;justify-content:space-between;flex-wrap:wrap}
+.btn{font:inherit;font-weight:800;font-size:16px;border-radius:10px;padding:14px 20px;cursor:pointer;border:1.5px solid var(--pine);background:transparent;color:var(--pine);text-decoration:none;display:inline-block;text-align:center}
+.btn.primary{background:var(--pine);color:var(--pine-fg)}
+.btn.sand{background:var(--sand);border-color:var(--sand-line);color:var(--sand-fg)}
+.btn[hidden]{display:none}
+.example{font-size:13px;color:var(--sand-fg);background:var(--sand);border:1px solid var(--sand-line);border-radius:99px;padding:4px 12px;align-self:flex-start;font-weight:700}
+/* Ergebnis */
+.verdict{border-radius:14px;padding:20px;display:flex;gap:16px;align-items:flex-start}
+.verdict .dot{flex:none;width:44px;height:44px;border-radius:50%}
+.verdict h3{margin:0;font-size:24px;line-height:1.2}
+.verdict p{margin:6px 0 0}
+.v-red{background:var(--red-bg)} .v-red .dot{background:var(--red)} .v-red h3{color:var(--red)}
+.v-amber{background:var(--amber-bg)} .v-amber .dot{background:#E1A71B} .v-amber h3{color:var(--amber)}
+.v-green{background:var(--mint)} .v-green .dot{background:var(--green)} .v-green h3{color:var(--green)}
+.v-grey{background:var(--bg);border:1px solid var(--line)} .v-grey .dot{background:var(--muted)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.stat{border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.stat div{font-size:13px;color:var(--muted);font-weight:600}
+.stat strong{display:block;font-size:26px;font-variant-numeric:tabular-nums;color:var(--pine)}
+.stat.hl strong{color:var(--green)}
+.rows{display:flex;flex-direction:column;font-variant-numeric:tabular-nums}
+.rows div{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-bottom:1px solid var(--line)}
+.rows div:last-child{border-bottom:none;font-weight:800}
+.note{font-size:14px;color:var(--muted);margin:0}
+.cta{background:var(--pine);color:var(--pine-fg);border-radius:18px;padding:28px;display:flex;flex-direction:column;gap:14px}
+.cta h3{margin:0;font-size:24px;line-height:1.2}
+.cta p{margin:0;opacity:.9}
+.cta .btn.sand{align-self:flex-start}
+.mail{display:flex;flex-direction:column;gap:12px}
+.mail .row{display:flex;gap:10px;flex-wrap:wrap}
+.mail .row input{flex:1 1 220px}
+.mail p{margin:0}
+#result{display:flex;flex-direction:column;gap:20px}
+[hidden]{display:none!important}
+footer{font-size:13px;color:var(--muted);text-align:center}
+@media (prefers-reduced-motion:no-preference){.step{animation:in .25s ease-out}@keyframes in{from{opacity:.4;transform:translateY(6px)}to{opacity:1;transform:none}}}
+</style>
+
 </head>
 <body>
-<p>Der Etsy-Werbe-Check ist umgezogen: <a href="/etsy-werbe-check">zum Etsy-Werbe-Check</a>.</p>
+<div class="wrap">
+  <div class="brand"><i><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round"><path d="M4 19V10M10 19V5M16 19v-7M21 19H3"/></svg></i>Etsy-Werbe-Check</div>
+  <header>
+    <h1>Prüfe jetzt, ob sich deine Etsy-Anzeige wirklich lohnt</h1>
+    <p class="lead">Fünf kurze Schritte für ein Produkt. Am Ende siehst du, ab welchem ROAS du Gewinn machst und was dich die Anzeige im letzten Monat gekostet oder gebracht hat.</p>
+  </header>
+
+  <form class="card" id="check" novalidate>
+    <div class="progress" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span></div>
+    <span class="example" id="exampleTag">Beispielwerte: Duftkerze. Trag einfach deine Zahlen ein.</span>
+
+    <section class="step" data-step="1">
+      <div class="stepmeta">Schritt 1 von 5</div>
+      <h2>Was kostet dein Produkt bei Etsy?</h2>
+      <p class="hint">Der Preis, den Kund:innen im Shop sehen.</p>
+      <div class="fields" style="margin-top:16px">
+        <div class="field" style="grid-column:1/-1"><label for="prod">Produkt</label><input type="text" id="prod" value="Duftkerze Lavendel"><small>Damit du das Ergebnis in der E-Mail zuordnen kannst</small></div>
+        <div class="field"><label for="price">Verkaufspreis</label><div class="money"><input type="text" inputmode="decimal" id="price" value="24,90"></div></div>
+        <div class="field"><label for="ship">Versandpreis</label><div class="money"><input type="text" inputmode="decimal" id="ship" value="4,90"></div><small>0, wenn du kostenlos versendest</small></div>
+      </div>
+    </section>
+
+    <section class="step" data-step="2" hidden>
+      <div class="stepmeta">Schritt 2 von 5</div>
+      <h2>Was kostet dich ein verkauftes Stück?</h2>
+      <p class="hint">Grobe Werte reichen. Als Regelbesteuerte:r trägst du Nettobeträge ein.</p>
+      <div class="fields" style="margin-top:16px">
+        <div class="field"><label for="mat">Material</label><div class="money"><input type="text" inputmode="decimal" id="mat" value="6,50"></div></div>
+        <div class="field"><label for="pack">Verpackung</label><div class="money"><input type="text" inputmode="decimal" id="pack" value="1,20"></div></div>
+        <div class="field"><label for="porto">Porto</label><div class="money"><input type="text" inputmode="decimal" id="porto" value="4,50"></div></div>
+      </div>
+    </section>
+
+    <section class="step" data-step="3" hidden>
+      <div class="stepmeta">Schritt 3 von 5</div>
+      <h2>Wie bist du steuerlich aufgestellt?</h2>
+      <p class="hint">Etsy berechnet auf Gebühren und Werbung 19 % Umsatzsteuer. Ob du sie zurückbekommst, macht einen großen Unterschied.</p>
+      <div class="choices" style="margin-top:16px">
+        <label class="choice"><input type="radio" name="tax" value="ku" id="tax-ku" checked><span><b>Kleinunternehmer:in</b><em>Du weist keine Umsatzsteuer aus und zahlst die Umsatzsteuer auf Etsy-Gebühren selbst.</em></span></label>
+        <label class="choice"><input type="radio" name="tax" value="regel" id="tax-regel"><span><b>Regelbesteuert</b><em>Du ziehst die Umsatzsteuer auf Etsy-Gebühren als Vorsteuer ab.</em></span></label>
+      </div>
+    </section>
+
+    <section class="step" data-step="4" hidden>
+      <div class="stepmeta">Schritt 4 von 5</div>
+      <h2>Wohin soll ich dir dein Ergebnis schicken?</h2>
+      <p class="hint">Nach dem letzten Schritt bekommst du dein Ergebnis mit allen Zahlen und einer Empfehlung per E-Mail. In den Tagen danach zeige ich dir in kurzen Mails, wo bei Etsy unbemerkt Geld verloren geht, und schicke dir danach etwa einmal im Monat einen Newsletter mit Neuigkeiten zu Etsy-Gebühren und Anzeigen.</p>
+      <div class="fields" style="margin-top:16px">
+        <div class="field"><label for="fname">Vorname</label><input type="text" id="fname" autocomplete="given-name" placeholder="Lena"></div>
+        <div class="field"><label for="email">E-Mail-Adresse</label><input type="email" id="email" autocomplete="email" placeholder="lena@beispiel.de"></div>
+        <div aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden"><label for="website">Website</label><input type="text" id="website" tabindex="-1" autocomplete="off"></div>
+      </div>
+      <p class="note" style="margin-top:14px">Mit dem Absenden des Checks meldest du dich für meinen Newsletter an. Du bekommst zuerst eine E-Mail, in der du die Anmeldung bestätigst. Danach kommt dein Ergebnis. Abmelden kannst du dich jederzeit über den Link in jeder E-Mail. Mehr dazu in der <a href="/datenschutz" target="_blank" style="color:var(--pine)">Datenschutzerklärung</a>.</p>
+    </section>
+
+    <section class="step" data-step="5" hidden>
+      <div class="stepmeta">Schritt 5 von 5</div>
+      <h2>Was hat deine Anzeige im letzten Monat gemacht?</h2>
+      <p class="hint">Du findest beide Zahlen im Shop-Manager unter Marketing, Etsy Ads. Wähle dort die letzten 30 Tage und dieses Produkt.</p>
+      <div class="fields" style="margin-top:16px">
+        <div class="field"><label for="spend">Ausgaben für Anzeigen</label><div class="money"><input type="text" inputmode="decimal" id="spend" value="30,00"></div></div>
+        <div class="field"><label for="rev">Umsatz aus Anzeigen</label><div class="money"><input type="text" inputmode="decimal" id="rev" value="59,60"></div></div>
+      </div>
+    </section>
+
+    <section id="result" hidden aria-live="polite"></section>
+
+    <p class="err" id="err" hidden></p>
+    <div class="nav">
+      <button type="button" class="btn" id="back">Zurück</button>
+      <button type="submit" class="btn primary" id="next">Weiter</button>
+      <a class="btn primary" id="mailbtn" href="#" target="_blank" rel="noopener" hidden>Anmeldung bestätigen</a>
+    </div>
+  </form>
+
+  <section class="cta" id="cta" hidden>
+    <h3>Das war ein Produkt. Wie steht dein ganzer Shop da?</h3>
+    <p>Der Etsy-Gewinnrechner für Google Sheets und Excel rechnet jedes Produkt genau durch, mit Offsite Ads, Empfehlung pro Anzeige und Monats-Dashboard.</p>
+    <a class="btn sand" id="etsylink" href="https://www.etsy.com" target="_blank" rel="noopener">Zum Etsy-Gewinnrechner</a>
+  </section>
+
+  <footer>Rechnet mit den Etsy-Gebühren für Deutschland, Stand Oktober 2026. Offsite Ads sind nicht enthalten. Kalkulationshilfe, keine Steuerberatung.</footer>
+</div>
+
+<script>
+(function(){
+  const USD_EUR = 0.86, VAT = 0.19;
+  // Etsy-Link: hier deinen Listing-Link mit Spare-mit-Links eintragen
+  const ETSY_URL = 'https://www.etsy.com';
+  let emailGiven = false, teaser = false, failed = false;
+  function subscribe(email, fname, extra){
+    return fetch('/api/werbe-check', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({ email, firstname: fname, fields: extra, website: $('website').value })
+    }).then(r => { if (!r.ok) throw new Error('HTTP ' + r.status); })
+      .catch(err => {
+        console.error(err);
+        // Versand fehlgeschlagen: ganzes Ergebnis direkt zeigen, damit nichts verloren geht
+        failed = true; render(); show(6);
+      });
+  }
+  const $ = id => document.getElementById(id);
+  const steps = [...document.querySelectorAll('.step')];
+  const bars = [...document.querySelectorAll('.progress span')];
+  let cur = 1;
+  const eur = v => v.toLocaleString('de-DE',{style:'currency',currency:'EUR'});
+  const num = v => v.toLocaleString('de-DE',{minimumFractionDigits:2,maximumFractionDigits:2});
+  const r2 = v => Math.round((v + Number.EPSILON) * 100) / 100;
+  function val(id){
+    const s = $(id).value.replace(/€|\s/g,'').replace(/\.(?=\d{3}(\D|$))/g,'').replace(',', '.');
+    if (s === '') return NaN;
+    const n = Number(s);
+    return isFinite(n) && n >= 0 ? n : NaN;
+  }
+  const required = {1:['price','ship'],2:['mat','pack','porto'],5:['spend','rev']};
+  function check(step){
+    for (const id of (required[step]||[])){
+      if (isNaN(val(id))){ return 'Bitte gib bei „' + document.querySelector('label[for='+id+']').textContent + '“ eine Zahl ein, zum Beispiel 12,50.'; }
+    }
+    if (step === 1 && val('price') <= 0) return 'Der Verkaufspreis muss größer als 0 sein.';
+    if (step === 4){
+      if (!$('fname').value.trim()) return 'Bitte gib deinen Vornamen ein.';
+      if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test($('email').value.trim())) return 'Bitte gib eine gültige E-Mail-Adresse ein, zum Beispiel lena@beispiel.de.';
+    }
+    return '';
+  }
+  // Öffnet das Webmail-Postfach bekannter Anbieter, damit die Bestätigung nur einen Klick entfernt ist
+  function inboxUrl(email){
+    const d = (email.split('@')[1] || '').trim().toLowerCase();
+    const map = {
+      'gmail.com':'https://mail.google.com/mail/u/0/#inbox', 'googlemail.com':'https://mail.google.com/mail/u/0/#inbox',
+      'gmx.de':'https://www.gmx.net/', 'gmx.net':'https://www.gmx.net/', 'gmx.at':'https://www.gmx.at/', 'gmx.ch':'https://www.gmx.ch/',
+      'web.de':'https://web.de/', 't-online.de':'https://email.t-online.de/', 'freenet.de':'https://webmail.freenet.de/',
+      'outlook.com':'https://outlook.live.com/mail/', 'outlook.de':'https://outlook.live.com/mail/', 'hotmail.com':'https://outlook.live.com/mail/',
+      'hotmail.de':'https://outlook.live.com/mail/', 'live.com':'https://outlook.live.com/mail/', 'live.de':'https://outlook.live.com/mail/',
+      'yahoo.com':'https://mail.yahoo.com/', 'yahoo.de':'https://mail.yahoo.com/', 'icloud.com':'https://www.icloud.com/mail',
+      'me.com':'https://www.icloud.com/mail', 'mac.com':'https://www.icloud.com/mail', 'posteo.de':'https://posteo.de/webmail/',
+      'mailbox.org':'https://login.mailbox.org/', 'aol.com':'https://mail.aol.com/'
+    };
+    return map[d] || '';
+  }
+  function show(n){
+    cur = n;
+    steps.forEach(s => s.hidden = Number(s.dataset.step) !== n);
+    $('result').hidden = n !== 6;
+    bars.forEach((b,i) => b.classList.toggle('on', i < Math.min(n,5)));
+    $('back').hidden = n === 1;
+    const done = n === 6 && teaser;
+    const inbox = done ? inboxUrl($('email').value) : '';
+    $('next').hidden = done;
+    $('mailbtn').hidden = !inbox;
+    if (inbox) $('mailbtn').href = inbox;
+    $('next').textContent = n === 5 ? 'Ergebnis anzeigen' : (n === 6 ? 'Anderes Produkt prüfen' : 'Weiter');
+    $('back').textContent = done ? 'Anderes Produkt prüfen' : (n === 6 ? 'Zahlen ändern' : 'Zurück');
+    $('cta').hidden = n !== 6 || teaser;
+    $('err').hidden = true;
+  }
+  function calc(){
+    const ku = $('tax-ku').checked;
+    const order = val('price') + val('ship');
+    const listing = r2(0.20 * USD_EUR), trans = r2(order * 0.065), pay = r2(order * 0.04 + 0.30);
+    const net = listing + trans + pay;
+    const feeVat = ku ? r2(net * VAT) : 0;
+    const fees = net + feeVat;
+    const costs = val('mat') + val('pack') + val('porto');
+    const revenue = ku ? order : order / (1 + VAT);
+    const profit = r2(revenue - fees - costs);
+    const adFactor = ku ? 1 + VAT : 1;
+    const be = profit > 0 ? order * adFactor / profit : Infinity;
+    const spend = val('spend'), adRev = val('rev');
+    const roas = spend > 0 ? adRev / spend : null;
+    const sales = adRev / order;
+    const month = sales * profit - spend * adFactor;
+    return {ku, order, fees, feeVat, costs, revenue, profit, be, roas, spend, adRev, sales, month, adFactor};
+  }
+  function render(){
+    const c = calc();
+    let cls, title, text;
+    if (c.profit <= 0){
+      cls='v-grey'; title='Schon ohne Werbung bleibt nichts übrig';
+      text='Nach Etsy-Gebühren und deinen Kosten machst du pro Verkauf ' + eur(c.profit) + '. Prüf zuerst deinen Preis. Solange jeder Verkauf Verlust bringt, macht Werbung ihn nur größer.';
+    } else if (c.roas === null){
+      cls='v-grey'; title='Noch keine Werbeausgaben';
+      text='Wenn du Anzeigen startest, muss dein ROAS mindestens ' + num(c.be) + ' erreichen, damit du nicht draufzahlst.';
+    } else if (c.roas < c.be){
+      cls='v-red'; title='Diese Anzeige kostet dich Geld';
+      text='Dein ROAS liegt bei ' + num(c.roas) + '. Damit du verdienst, bräuchtest du mindestens ' + num(c.be) + '. Pausiere die Anzeige oder prüfe deinen Preis.';
+    } else if (c.roas < c.be * 1.2){
+      cls='v-amber'; title='Knapp über der Grenze';
+      text='Dein ROAS von ' + num(c.roas) + ' liegt gerade über deinem Break-even von ' + num(c.be) + '. Beobachte die Anzeige und verbessere Fotos, Titel oder Preis.';
+    } else {
+      cls='v-green'; title='Diese Anzeige lohnt sich';
+      text='Dein ROAS von ' + num(c.roas) + ' liegt deutlich über deinem Break-even von ' + num(c.be) + '. Du kannst das Budget halten oder vorsichtig erhöhen.';
+    }
+    const monthLine = (c.roas !== null && c.profit > 0)
+      ? '<div class="stat ' + (c.month >= 0 ? 'hl' : '') + '"><div>Ergebnis der Anzeige, letzter Monat</div><strong style="color:var(' + (c.month >= 0 ? '--green' : '--red') + ')">' + (c.month >= 0 ? '+ ' : '− ') + eur(Math.abs(c.month)) + '</strong></div>' : '';
+    // Jedes neue Ergebnis geht per E-Mail raus; auf der Seite steht nur die Vorschau
+    const sent = emailGiven && !failed;
+    teaser = sent;
+    if (sent){
+      // Vorschau: nur die Kernaussage, die ganze Rechnung kommt per E-Mail
+      let hint, detail = '';
+      if (c.profit <= 0){
+        hint = 'dass bei diesem Produkt schon ohne Werbung nichts übrig bleibt.';
+        detail = 'Wie hoch der Verlust pro Verkauf ist und was du tun kannst, steht in der E-Mail.';
+      } else if (c.roas === null){
+        hint = 'ab welchem ROAS sich Werbung für dieses Produkt lohnen würde.';
+        detail = 'Die genaue Grenze und deine Rechnung pro Verkauf stehen in der E-Mail.';
+      } else if (c.roas < c.be){
+        hint = 'dass diese Anzeige dich zu viel Geld kostet.';
+        detail = 'Dein ROAS liegt bei ' + num(c.roas) + '. Damit du verdienst, bräuchtest du jedoch mindestens ' + num(c.be) + '.';
+      } else if (c.roas < c.be * 1.2){
+        hint = 'dass diese Anzeige nur knapp über der Grenze liegt.';
+        detail = 'Dein ROAS liegt bei ' + num(c.roas) + ', deine Grenze bei ' + num(c.be) + '.';
+      } else {
+        hint = 'dass sich diese Anzeige lohnt.';
+        detail = 'Dein ROAS von ' + num(c.roas) + ' liegt deutlich über deiner Grenze von ' + num(c.be) + '.';
+      }
+      $('result').innerHTML =
+        '<div class="stepmeta">Dein Ergebnis</div>' +
+        '<div class="verdict v-green" id="sendmsg"><span class="dot" aria-hidden="true"></span><div><h3>Dein Ergebnis ist unterwegs</h3><p>Bestätige bitte zuerst deine Anmeldung in der E-Mail, die gerade an ' + $('email').value.trim().replace(/[<>&"]/g,'') + ' gegangen ist. Danach schicke ich dir dein Ergebnis.</p></div></div>' +
+        '<div class="verdict ' + cls + '"><span class="dot" aria-hidden="true"></span><div><h3>Hier siehst du schon vorab, ' + hint + '</h3><p>' + detail + '</p></div></div>';
+    } else
+    $('result').innerHTML =
+      '<div class="stepmeta">Dein Ergebnis</div>' +
+      (failed ? '<div class="verdict v-grey"><span class="dot" aria-hidden="true" style="background:var(--red)"></span><div><h3 style="color:var(--red)">Die E-Mail konnte ich leider nicht verschicken</h3><p>Hier ist dein Ergebnis direkt. Probier die Anmeldung später noch einmal oder schreib mir an <a href="mailto:mail@stephanie-wieck.com" style="color:var(--pine)">mail@stephanie-wieck.com</a>.</p></div></div>' : '') +
+      '<div class="verdict ' + cls + '"><span class="dot" aria-hidden="true"></span><div><h3>' + title + '</h3><p>' + text + '</p></div></div>' +
+      '<div class="stats">' +
+        '<div class="stat"><div>Break-even-ROAS</div><strong>' + (isFinite(c.be) ? num(c.be) : 'nicht erreichbar') + '</strong></div>' +
+        (c.roas !== null ? '<div class="stat"><div>Dein ROAS</div><strong>' + num(c.roas) + '</strong></div>' : '') +
+        monthLine +
+      '</div>' +
+      '<div class="rows" aria-label="Rechnung pro Verkauf">' +
+        '<div><span>Bestellwert</span><span>' + eur(c.order) + '</span></div>' +
+        (c.ku ? '' : '<div><span>davon Umsatzsteuer</span><span>− ' + eur(c.order - c.revenue) + '</span></div>') +
+        '<div><span>Etsy-Gebühren' + (c.ku ? ' inkl. Umsatzsteuer' : ' netto') + '</span><span>− ' + eur(c.fees) + '</span></div>' +
+        '<div><span>Deine Kosten</span><span>− ' + eur(c.costs) + '</span></div>' +
+        '<div><span>Gewinn pro Verkauf vor Werbung</span><span>' + eur(c.profit) + '</span></div>' +
+      '</div>' +
+      (c.ku && c.roas !== null ? '<p class="note">Werbekosten sind inklusive 19 % Umsatzsteuer gerechnet: ' + eur(c.spend) + ' Budget kosten dich ' + eur(c.spend * c.adFactor) + '.</p>' : '') +
+      '<p class="note">Nicht enthalten: Offsite-Ads-Gebühren von 12 bis 15 % pro Bestellung. Sie können dein Ergebnis weiter senken.</p>';
+    if (sent){
+      subscribe($('email').value.trim(), $('fname').value.trim(), {
+        PRODUKT: $('prod').value.trim() || 'dein Produkt',
+        AMPEL: title,
+        EMPFEHL: text,
+        BEROAS: isFinite(c.be) ? num(c.be) : 'nicht erreichbar',
+        ROAS: c.roas !== null ? num(c.roas) : '',
+        GEWINN: eur(c.profit),
+        MONAT: (c.roas !== null && c.profit > 0) ? (c.month >= 0 ? '+ ' : '− ') + eur(Math.abs(c.month)) : '',
+        STEUER: c.ku ? 'Kleinunternehmer:in' : 'regelbesteuert'
+      });
+    }
+  }
+  $('check').addEventListener('submit', e => {
+    e.preventDefault();
+    if (cur === 6){ show(1); $('price').focus(); return; }
+    const msg = check(cur);
+    if (msg){ $('err').textContent = msg; $('err').hidden = false; return; }
+    if (cur === 3 && emailGiven){ show(5); return; }
+    if (cur === 4){ emailGiven = true; show(5); return; }
+    if (cur === 5){ render(); show(6); $('result').scrollIntoView({behavior:'smooth',block:'start'}); return; }
+    show(cur + 1);
+  });
+  $('back').addEventListener('click', () => {
+    if (cur === 6 && teaser){ show(1); $('price').focus(); return; }
+    show(cur === 6 ? 5 : (cur === 5 && emailGiven ? 3 : Math.max(1, cur - 1)));
+  });
+  document.querySelectorAll('#check input').forEach(i => i.addEventListener('input', () => { $('exampleTag').hidden = true; }));
+  $('etsylink').href = ETSY_URL;
+  show(1);
+})();
+</script>
 </body>
 </html>

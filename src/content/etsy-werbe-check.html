@@ -96,6 +96,8 @@ input:focus-visible,button:focus-visible,a:focus-visible,.choice input:focus-vis
 .mail .row{display:flex;gap:10px;flex-wrap:wrap}
 .mail .row input{flex:1 1 220px}
 .mail p{margin:0}
+#result{display:flex;flex-direction:column;gap:20px}
+[hidden]{display:none!important}
 footer{font-size:13px;color:var(--muted);text-align:center}
 @media (prefers-reduced-motion:no-preference){.step{animation:in .25s ease-out}@keyframes in{from{opacity:.4;transform:translateY(6px)}to{opacity:1;transform:none}}}
 </style>
@@ -167,7 +169,7 @@ footer{font-size:13px;color:var(--muted);text-align:center}
       </div>
     </section>
 
-    <section id="result" hidden aria-live="polite" style="display:flex;flex-direction:column;gap:20px"></section>
+    <section id="result" hidden aria-live="polite"></section>
 
     <p class="err" id="err" hidden></p>
     <div class="nav">
@@ -190,7 +192,7 @@ footer{font-size:13px;color:var(--muted);text-align:center}
   const USD_EUR = 0.86, VAT = 0.19;
   // Etsy-Link: hier deinen Listing-Link mit Spare-mit-Links eintragen
   const ETSY_URL = 'https://www.etsy.com';
-  let subscribed = false, emailGiven = false, teaser = false, failed = false;
+  let emailGiven = false, teaser = false, failed = false;
   function subscribe(email, fname, extra){
     return fetch('/api/werbe-check', {
       method: 'POST',
@@ -200,7 +202,7 @@ footer{font-size:13px;color:var(--muted);text-align:center}
       .catch(err => {
         console.error(err);
         // Versand fehlgeschlagen: ganzes Ergebnis direkt zeigen, damit nichts verloren geht
-        failed = true; subscribed = true; render(); show(6);
+        failed = true; render(); show(6);
       });
   }
   const $ = id => document.getElementById(id);
@@ -278,7 +280,8 @@ footer{font-size:13px;color:var(--muted);text-align:center}
     }
     const monthLine = (c.roas !== null && c.profit > 0)
       ? '<div class="stat ' + (c.month >= 0 ? 'hl' : '') + '"><div>Ergebnis der Anzeige, letzter Monat</div><strong style="color:var(' + (c.month >= 0 ? '--green' : '--red') + ')">' + (c.month >= 0 ? '+ ' : '− ') + eur(Math.abs(c.month)) + '</strong></div>' : '';
-    const sent = !subscribed && emailGiven;
+    // Jedes neue Ergebnis geht per E-Mail raus; auf der Seite steht nur die Vorschau
+    const sent = emailGiven && !failed;
     teaser = sent;
     if (sent){
       // Vorschau: nur die Kernaussage, die ganze Rechnung kommt per E-Mail
@@ -333,7 +336,6 @@ footer{font-size:13px;color:var(--muted);text-align:center}
         MONAT: (c.roas !== null && c.profit > 0) ? (c.month >= 0 ? '+ ' : '− ') + eur(Math.abs(c.month)) : '',
         STEUER: c.ku ? 'Kleinunternehmer:in' : 'regelbesteuert'
       });
-      subscribed = true;
     }
   }
   $('check').addEventListener('submit', e => {

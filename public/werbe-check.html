@@ -300,7 +300,8 @@ footer{font-size:13px;color:var(--muted);text-align:center}
       }
       $('result').innerHTML =
         '<div class="stepmeta">Dein Ergebnis</div>' +
-        '<div class="verdict ' + cls + '"><span class="dot" aria-hidden="true"></span><div id="sendmsg"><h3 style="color:var(--pine)">Dein Ergebnis ist unterwegs</h3><p>Bestätige bitte zuerst deine Anmeldung in der E-Mail, die gerade an ' + $('email').value.trim().replace(/[<>&"]/g,'') + ' gegangen ist. Danach schicke ich dir dein Ergebnis. Hier siehst du schon vorab, ' + hint + '</p><p>' + detail + '</p></div></div>';
+        '<div class="verdict v-green" id="sendmsg"><span class="dot" aria-hidden="true"></span><div><h3>Dein Ergebnis ist unterwegs</h3><p>Bestätige bitte zuerst deine Anmeldung in der E-Mail, die gerade an ' + $('email').value.trim().replace(/[<>&"]/g,'') + ' gegangen ist. Danach schicke ich dir dein Ergebnis.</p></div></div>' +
+        '<div class="verdict ' + cls + '"><span class="dot" aria-hidden="true"></span><div><h3>Hier siehst du schon vorab, ' + hint + '</h3><p>' + detail + '</p></div></div>';
     } else
     $('result').innerHTML =
       '<div class="stepmeta">Dein Ergebnis</div>' +

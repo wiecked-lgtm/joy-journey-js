@@ -175,6 +175,7 @@ footer{font-size:13px;color:var(--muted);text-align:center}
     <div class="nav">
       <button type="button" class="btn" id="back">Zurück</button>
       <button type="submit" class="btn primary" id="next">Weiter</button>
+      <a class="btn primary" id="mailbtn" href="#" target="_blank" rel="noopener" hidden>Anmeldung bestätigen</a>
     </div>
   </form>
 
@@ -230,14 +231,34 @@ footer{font-size:13px;color:var(--muted);text-align:center}
     }
     return '';
   }
+  // Öffnet das Webmail-Postfach bekannter Anbieter, damit die Bestätigung nur einen Klick entfernt ist
+  function inboxUrl(email){
+    const d = (email.split('@')[1] || '').trim().toLowerCase();
+    const map = {
+      'gmail.com':'https://mail.google.com/mail/u/0/#inbox', 'googlemail.com':'https://mail.google.com/mail/u/0/#inbox',
+      'gmx.de':'https://www.gmx.net/', 'gmx.net':'https://www.gmx.net/', 'gmx.at':'https://www.gmx.at/', 'gmx.ch':'https://www.gmx.ch/',
+      'web.de':'https://web.de/', 't-online.de':'https://email.t-online.de/', 'freenet.de':'https://webmail.freenet.de/',
+      'outlook.com':'https://outlook.live.com/mail/', 'outlook.de':'https://outlook.live.com/mail/', 'hotmail.com':'https://outlook.live.com/mail/',
+      'hotmail.de':'https://outlook.live.com/mail/', 'live.com':'https://outlook.live.com/mail/', 'live.de':'https://outlook.live.com/mail/',
+      'yahoo.com':'https://mail.yahoo.com/', 'yahoo.de':'https://mail.yahoo.com/', 'icloud.com':'https://www.icloud.com/mail',
+      'me.com':'https://www.icloud.com/mail', 'mac.com':'https://www.icloud.com/mail', 'posteo.de':'https://posteo.de/webmail/',
+      'mailbox.org':'https://login.mailbox.org/', 'aol.com':'https://mail.aol.com/'
+    };
+    return map[d] || '';
+  }
   function show(n){
     cur = n;
     steps.forEach(s => s.hidden = Number(s.dataset.step) !== n);
     $('result').hidden = n !== 6;
     bars.forEach((b,i) => b.classList.toggle('on', i < Math.min(n,5)));
     $('back').hidden = n === 1;
+    const done = n === 6 && teaser;
+    const inbox = done ? inboxUrl($('email').value) : '';
+    $('next').hidden = done;
+    $('mailbtn').hidden = !inbox;
+    if (inbox) $('mailbtn').href = inbox;
     $('next').textContent = n === 5 ? 'Ergebnis anzeigen' : (n === 6 ? 'Anderes Produkt prüfen' : 'Weiter');
-    $('back').textContent = n === 6 ? 'Zahlen ändern' : 'Zurück';
+    $('back').textContent = done ? 'Anderes Produkt prüfen' : (n === 6 ? 'Zahlen ändern' : 'Zurück');
     $('cta').hidden = n !== 6 || teaser;
     $('err').hidden = true;
   }
@@ -348,7 +369,10 @@ footer{font-size:13px;color:var(--muted);text-align:center}
     if (cur === 5){ render(); show(6); $('result').scrollIntoView({behavior:'smooth',block:'start'}); return; }
     show(cur + 1);
   });
-  $('back').addEventListener('click', () => show(cur === 6 ? 5 : (cur === 5 && emailGiven ? 3 : Math.max(1, cur - 1))));
+  $('back').addEventListener('click', () => {
+    if (cur === 6 && teaser){ show(1); $('price').focus(); return; }
+    show(cur === 6 ? 5 : (cur === 5 && emailGiven ? 3 : Math.max(1, cur - 1)));
+  });
   document.querySelectorAll('#check input').forEach(i => i.addEventListener('input', () => { $('exampleTag').hidden = true; }));
   $('etsylink').href = ETSY_URL;
   show(1);

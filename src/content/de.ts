@@ -27,7 +27,7 @@ export const de = {
     meta: {
       title: "Stephanie Wieck | Marketing und Kommunikation, Berlin",
       description:
-        "Freiberufliche Marketing- und Kommunikationsstrategin in Berlin: Positionierung und Botschaft, Content und Media Relations, Performance-Kampagnen und Reporting. Als Projekt, laufendes Mandat oder Leitung auf Zeit.",
+        "Marketing- und Kommunikation: Positionierung und Botschaft, Content und Media Relations, Performance-Kampagnen und Reporting. Als Projekt, laufendes Mandat oder Leitung auf Zeit.",
       ogDescription:
         "Ich verstärke Marketing- und Kommunikationsteams oder übernehme ihre Führung, wenn Strukturen fehlen. Von der Botschaft über Paid-Kampagnen bis zum Reporting.",
     },
@@ -88,12 +88,12 @@ export const de = {
       {
         k: "01",
         t: "Strategie",
-        d: "Ich analysiere eure Prozesse und finde die Hebel, an denen ein Change wirklich einen Unterschied macht.",
+        d: "Ich analysiere Prozesse und finde die Hebel, an denen ein Change wirklich einen Unterschied macht.",
       },
       {
         k: "02",
         t: "Umsetzung",
-        d: "Von der Redaktionsplanung bis zur Kampagne: konkrete Abläufe, die euer Team sofort nutzen kann.",
+        d: "Von der Redaktionsplanung bis zur Kampagne: konkrete Abläufe, die wir sofort nutzen können.",
       },
       {
         k: "03",
@@ -116,7 +116,7 @@ export const de = {
     },
     eyebrow: "Kontakt",
     h1: { pre: "Kurzes Gespräch,", accent: "klare", post: "Einschätzung." },
-    lead: "Ob Positionierung und Botschaft, Content und Kampagnen oder Reporting: Schreib mir kurz, worum es geht. Im Gespräch klären wir, wie ich am besten unterstütze, als Projekt, laufendes Mandat oder Leitung auf Zeit.",
+    lead: "Ob Positionierung und Botschaft, Content und Kampagnen oder Reporting: Schreib mir kurz, worum es geht. Im Gespräch klären wir, wie ich am besten unterstütze, als Projekt, laufende Mitarbeit oder Leitung.",
     cardTitle: "Direkter Draht",
     mailLabel: "E‑Mail",
     linkedinLabel: "LinkedIn",

@@ -110,7 +110,7 @@ export const de = {
     meta: {
       title: "Kontakt | Stephanie Wieck",
       description:
-        "Kontakt zu Stephanie Wieck, Marketing- und Kommunikationsstrategin in Berlin. Kostenloses Erstgespräch buchen.",
+        "Kontakt zu Stephanie Wieck, Marketing- und Kommunikation. Kostenloses Erstgespräch buchen.",
       ogDescription:
         "Schreib mir oder buche direkt ein kostenloses 30‑Minuten Erstgespräch zu Kommunikation, Content und Marketing.",
     },

@@ -22,7 +22,7 @@ export const en: Content = {
     meta: {
       title: "Stephanie Wieck | Marketing and Communications, Berlin",
       description:
-        "Freelance marketing and communications strategist in Berlin: positioning and messaging, content and media relations, performance campaigns, and reporting. Available for projects, ongoing engagements, or temporary leadership roles.",
+        "Freelance marketing and communications: positioning and messaging, content and media relations, performance campaigns, and reporting. Available for projects, ongoing engagements, or temporary leadership roles.",
       ogDescription:
         "I support marketing and communications teams or take the lead when organizational structures are lacking. From messaging to paid campaigns to reporting.",
     },
@@ -82,17 +82,17 @@ export const en: Content = {
       {
         k: "01",
         t: "Strategy",
-        d: "I analyze your processes and identify the levers where change can truly make a difference.",
+        d: "I analyze processes and identify the levers where change can truly make a difference.",
       },
       {
         k: "02",
         t: "Implementation",
-        d: "From editorial planning to campaigns: concrete workflows your team can put to use right away.",
+        d: "From editorial planning to campaigns: concrete workflows we can put to use right away.",
       },
       {
         k: "03",
         t: "Enablement",
-        d: "Workshops and support to ensure that these processes do not remain side projects, but become part of your everyday work.",
+        d: "Workshops and support to ensure that these processes do not remain side projects, but become part of our everyday work.",
       },
     ],
     ctaH2: "Let's talk about marketing and communication.",
@@ -103,13 +103,13 @@ export const en: Content = {
     meta: {
       title: "Contact | Stephanie Wieck",
       description:
-        "Contact Stephanie Wieck, a marketing and communications strategist in Berlin. Schedule a free initial consultation.",
+        "Contact Stephanie Wieck, marketing and communications. Schedule a free initial consultation.",
       ogDescription:
         "Send me a message or book a free 30‑minute initial consultation on communication, content, and marketing.",
     },
     eyebrow: "Contact",
     h1: { pre: "A quick call,", accent: "a clear", post: "answer." },
-    lead: "Whether it is positioning and messaging, content and campaigns, or reporting: Send me a quick note explaining what it is about. We will discuss how I can best support you, whether on a project, as part of an ongoing engagement, or in a leadership role.",
+    lead: "Whether it is positioning and messaging, content and campaigns, or reporting: Send me a quick note explaining what it is about. We will discuss how I can best support you, whether on a project, as an ongoing engagement, or in a leadership role.",
     cardTitle: "Direct Line",
     mailLabel: "Email",
     linkedinLabel: "LinkedIn",

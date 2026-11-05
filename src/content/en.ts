@@ -22,7 +22,7 @@ export const en: Content = {
     meta: {
       title: "Stephanie Wieck | Marketing and Communications, Berlin",
       description:
-        "Freelance marketing and communications: positioning and messaging, content and media relations, performance campaigns, and reporting. Available for projects, ongoing engagements, or temporary leadership roles.",
+        "Freelance marketing and communications: positioning and messaging, content and media relations, performance campaigns, and reporting. Available for projects, ongoing engagements, or leadership roles.",
       ogDescription:
         "I support marketing and communications teams or take the lead when organizational structures are lacking. From messaging to paid campaigns to reporting.",
     },
@@ -36,7 +36,7 @@ export const en: Content = {
       eyebrow: "About Me",
       h2: { pre: "Marketing that", accent: "works", post: "." },
       p1: "For over 15 years, I have been working at the intersection of marketing, communication, and digital growth. In this role, I think strategically and take a hands‑on approach to implementing customized processes.",
-      p2: "My focus is on developing tailored messages, content, and media relations, as well as data‑driven campaigns within existing teams and structures.",
+      p2: "My focus is on developing tailored messages, content, and media relations, as well as data‑driven campaigns.",
       link: "More About My Work",
     },
     capabilities: {
@@ -72,7 +72,7 @@ export const en: Content = {
     eyebrow: "About Me",
     h1: { pre: "Think strategically.", accent: "Implement", post: "hands‑on." },
     p1: "There are people who craft powerful messages. And there are people who set up tracking with dashboards. I have been doing both for over 15 years, and I have learned this: You will not get the right results unless you consider the message and measurability together.",
-    p2: "My focus is on positioning and messaging, content and media relations, and data‑driven campaigns. Where appropriate, I develop processes that take some of the workload off your team.",
+    p2: "My focus is on positioning and messaging, content and media relations, and data‑driven campaigns. Where appropriate, I develop processes that take some of the workload off our team.",
     p3: {
       pre: "You can find more information about my more than 15 years of experience in management and marketing on my",
       link: "LinkedIn profile",

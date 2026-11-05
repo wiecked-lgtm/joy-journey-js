@@ -41,7 +41,7 @@ export const de = {
       eyebrow: "Über mich",
       h2: { pre: "Marketing, das", accent: "wirkt", post: "." },
       p1: "Seit über 15 Jahren arbeite ich an der Schnittstelle von Marketing, Kommunikation und digitalem Wachstum. Dabei denke ich strategisch und setze hands‑on maßgeschneiderte Prozesse um.",
-      p2: "Mein Fokus liegt auf der Entwicklung passgenauer Botschaften, auf Content und Media Relations sowie auf datengetriebenen Kampagnen in bestehenden Teams und Strukturen.",
+      p2: "Mein Fokus liegt auf der Entwicklung passgenauer Botschaften, auf Content und Media Relations sowie auf datengetriebenen Kampagnen.",
       link: "Mehr über meine Arbeit",
     },
     capabilities: {
@@ -78,7 +78,7 @@ export const de = {
     eyebrow: "Über mich",
     h1: { pre: "Strategisch denken.", accent: "Hands‑on", post: "umsetzen." },
     p1: "Es gibt Menschen, die starke Botschaften entwickeln. Und Menschen, die Tracking mit Dashboard aufsetzen. Ich mache seit über 15 Jahren beides und habe gelernt: Das Ergebnis stimmt erst, wenn Botschaft und Messbarkeit zusammen gedacht werden.",
-    p2: "Mein Fokus liegt auf Positionierung und Botschaft, auf Content und Media Relations sowie auf datengetriebenen Kampagnen. Wo es sinnvoll ist, baue ich Abläufe, die eurem Team Arbeit abnehmen.",
+    p2: "Mein Fokus liegt auf Positionierung und Botschaft, auf Content und Media Relations sowie auf datengetriebenen Kampagnen. Wo es sinnvoll ist, baue ich Abläufe, die uns im Team Arbeit abnehmen.",
     p3: {
       pre: "Weitere Informationen zu meiner über 15‑jährigen Erfahrung in Management und Marketing findest du in meinem",
       link: "LinkedIn-Profil",
@@ -98,7 +98,7 @@ export const de = {
       {
         k: "03",
         t: "Enablement",
-        d: "Workshops und Begleitung, damit Prozesse kein Nebenprojekt bleiben, sondern Teil eures Alltags werden.",
+        d: "Workshops und Begleitung, damit Prozesse kein Nebenprojekt bleiben, sondern Teil des Alltags werden.",
       },
     ],
     ctaH2: "Lass uns über Marketing und Kommunikation sprechen.",

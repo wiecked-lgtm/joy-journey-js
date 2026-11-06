@@ -73,7 +73,7 @@ export const de = {
     },
     eyebrow: "Über mich",
     h1: { pre: "Strategisch denken.", accent: "Hands‑on", post: "umsetzen." },
-    p1: "Seit über 15 Jahren arbeite ich an beidem: an der Botschaft und daran, ob sie ankommt. Meine Erfahrung ist, dass das eine ohne das andere selten funktioniert.",
+    p1: "Ich arbeite an beidem: an der Botschaft und an ihrer Wirkung. Ich schreibe Positionierung, Pressetexte und Kampagnen, und ich baue das Reporting dazu selbst.",
     p2: "Mein Fokus liegt auf Positionierung und Botschaft, auf Content und Media Relations sowie auf Kampagnen und deren Auswertung. Wo es sinnvoll ist, baue ich Abläufe, die uns im Team Arbeit abnehmen.",
     p3: {
       pre: "Weitere Informationen zu meiner über 15‑jährigen Erfahrung in Management und Marketing findest du in meinem",

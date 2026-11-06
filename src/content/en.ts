@@ -67,7 +67,7 @@ export const en: Content = {
     },
     eyebrow: "About Me",
     h1: { pre: "Think strategically.", accent: "Implement", post: "hands‑on." },
-    p1: "I work on both: the message itself and its impact. I write positioning, press materials and campaigns, and I build the reporting for them myself.",
+    p1: "I work on both: the message itself and its impact. I write for marketing, campaigns or press materials, and I build the reporting for them myself.",
     p2: "My focus is on positioning and messaging, content and media relations, and campaigns and their evaluation. Where appropriate, I develop processes that take some of the workload off our team.",
     p3: {
       pre: "You can find more information about my more than 15 years of experience in management and marketing on my",

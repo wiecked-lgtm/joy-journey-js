@@ -22,21 +22,21 @@ export const en: Content = {
     meta: {
       title: "Stephanie Wieck | Marketing and Communications, Berlin",
       description:
-        "Freelance marketing and communications: positioning and messaging, content and media relations, performance campaigns, and reporting. Available for projects, ongoing engagements, or leadership roles.",
+        "Marketing and communications: positioning and messaging, content and media relations, campaigns and evaluation. Available for projects, ongoing engagements, or leadership roles.",
       ogDescription:
-        "I support marketing and communications teams or take the lead when organizational structures are lacking. From messaging to paid campaigns to reporting.",
+        "I support marketing and communications teams or take on a leadership role within them. From the message through to the evaluation.",
     },
     hero: {
-      eyebrow: "Communication · Content · Performance",
+      eyebrow: "Communication · Content · Campaigns",
       h1: { pre: "Clear", accent: "messaging", post: "Executed flawlessly." },
-      lead: "I support marketing and communications teams or take the lead when organizational structures are lacking. From messaging to paid campaigns to reporting: strategically clear and executed with a hands‑on approach.",
+      lead: "I support marketing and communications teams or take on a leadership role within them. From the message to the evaluation: strategically clear and executed with a hands‑on approach.",
       cta: "Schedule a Free Initial Consultation",
     },
     about: {
       eyebrow: "About Me",
       h2: { pre: "Marketing that", accent: "works", post: "." },
-      p1: "For over 15 years, I have been working at the intersection of marketing, communication, and digital growth. In this role, I think strategically and take a hands‑on approach to implementing customized processes.",
-      p2: "My focus is on developing tailored messages, content, and media relations, as well as data‑driven campaigns.",
+      p1: "For over 15 years, I have been working at the intersection of marketing and communication. I think strategically and take a hands‑on approach to implementation.",
+      p2: "My focus is on developing tailored messages, content, and media relations, as well as campaigns and their evaluation.",
       link: "More About My Work",
     },
     capabilities: {
@@ -46,17 +46,13 @@ export const en: Content = {
         "Positioning, Messaging, and Narrative",
         "Public Relations and Media Relations",
         "Content Strategy and Editorial Planning",
-        "Performance Marketing and Paid Ads",
-        "SEO and Organic Visibility",
-        "Newsletters and CRM",
-        "Social Media and Campaign Production",
-        "Reporting and Analysis",
+        "Campaigns, Reporting, and Analysis",
       ],
     },
     cta: {
       eyebrow: "The first step is free",
       h2: { pre: "Let's talk about your", accent: "marketing", post: "." },
-      p: "30 minutes is all it takes to see where the greatest leverage lies: in the message, the funnel, or the process. Pragmatic and without unnecessary complexity.",
+      p: "30 minutes is all it takes to see where the greatest leverage lies: in the message, the processes, or the evaluation. Pragmatic and without unnecessary complexity.",
       button: "Schedule an appointment",
     },
   },
@@ -65,14 +61,14 @@ export const en: Content = {
     meta: {
       title: "About Me | Stephanie Wieck",
       description:
-        "Over 15 years of experience in marketing and communications: positioning and messaging, content and media relations, performance campaigns, and reporting.",
+        "Over 15 years of experience in marketing and communications: positioning and messaging, content and media relations, campaigns and evaluation.",
       ogDescription:
-        "Marketing and Communications Strategist: from messaging to content and media relations to data‑driven campaigns.",
+        "Marketing and Communications Strategist: from messaging to content and media relations to the evaluation of the campaign.",
     },
     eyebrow: "About Me",
     h1: { pre: "Think strategically.", accent: "Implement", post: "hands‑on." },
-    p1: "There are people who craft powerful messages. And there are people who set up tracking with dashboards. I have been doing both for over 15 years, and I have learned this: You will not get the right results unless you consider the message and measurability together.",
-    p2: "My focus is on positioning and messaging, content and media relations, and data‑driven campaigns. Where appropriate, I develop processes that take some of the workload off our team.",
+    p1: "For over 15 years I have been working on both: the message itself and whether it gets across. In my experience, one rarely works without the other.",
+    p2: "My focus is on positioning and messaging, content and media relations, and campaigns and their evaluation. Where appropriate, I develop processes that take some of the workload off our team.",
     p3: {
       pre: "You can find more information about my more than 15 years of experience in management and marketing on my",
       link: "LinkedIn profile",
@@ -91,8 +87,8 @@ export const en: Content = {
       },
       {
         k: "03",
-        t: "Enablement",
-        d: "Workshops and support to ensure that these processes do not remain side projects, but become part of our everyday work.",
+        t: "Handover",
+        d: "Documentation and handover, so that the work continues when my assignment ends.",
       },
     ],
     ctaH2: "Let's talk about marketing and communication.",

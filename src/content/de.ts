@@ -27,21 +27,21 @@ export const de = {
     meta: {
       title: "Stephanie Wieck | Marketing und Kommunikation, Berlin",
       description:
-        "Marketing- und Kommunikation: Positionierung und Botschaft, Content und Media Relations, Performance-Kampagnen und Reporting. Als Projekt, laufendes Mandat oder Leitung auf Zeit.",
+        "Marketing und Kommunikation: Positionierung und Botschaft, Content und Media Relations, Kampagnen und Auswertung. Als Projekt, laufendes Mandat oder Leitung auf Zeit.",
       ogDescription:
-        "Ich verstärke Marketing- und Kommunikationsteams oder übernehme ihre Führung, wenn Strukturen fehlen. Von der Botschaft über Paid-Kampagnen bis zum Reporting.",
+        "Ich verstärke Marketing- und Kommunikationsteams oder übernehme ihre Führung. Von der Botschaft bis zur Auswertung.",
     },
     hero: {
-      eyebrow: "Kommunikation · Content · Performance",
+      eyebrow: "Kommunikation · Content · Kampagnen",
       h1: { pre: "Klar in der", accent: "Botschaft", post: "Sauber in der Umsetzung." },
-      lead: "Ich verstärke Marketing- und Kommunikationsteams oder übernehme ihre Führung, wenn Strukturen fehlen. Von der Botschaft über Paid-Kampagnen bis zum Reporting: strategisch klar und hands‑on umgesetzt.",
+      lead: "Ich verstärke Marketing- und Kommunikationsteams oder übernehme ihre Führung. Von der Botschaft bis zur Auswertung: strategisch klar und hands‑on umgesetzt.",
       cta: "Kostenloses Erstgespräch buchen",
     },
     about: {
       eyebrow: "Über mich",
       h2: { pre: "Marketing, das", accent: "wirkt", post: "." },
-      p1: "Seit über 15 Jahren arbeite ich an der Schnittstelle von Marketing, Kommunikation und digitalem Wachstum. Dabei denke ich strategisch und setze hands‑on maßgeschneiderte Prozesse um.",
-      p2: "Mein Fokus liegt auf der Entwicklung passgenauer Botschaften, auf Content und Media Relations sowie auf datengetriebenen Kampagnen.",
+      p1: "Seit über 15 Jahren arbeite ich an der Schnittstelle von Marketing und Kommunikation. Dabei denke ich strategisch und setze hands‑on um.",
+      p2: "Mein Fokus liegt auf der Entwicklung passgenauer Botschaften, auf Content und Media Relations sowie auf Kampagnen und deren Auswertung.",
       link: "Mehr über meine Arbeit",
     },
     capabilities: {
@@ -51,17 +51,13 @@ export const de = {
         "Positionierung, Messaging und Narrativ",
         "PR und Media Relations",
         "Content-Strategie und Redaktionsplanung",
-        "Performance Marketing & Paid Ads",
-        "SEO und organische Sichtbarkeit",
-        "Newsletter und CRM",
-        "Social Media & Kampagnenproduktion",
-        "Reporting und Analyse",
+        "Kampagnen, Reporting und Analyse",
       ],
     },
     cta: {
       eyebrow: "Der erste Schritt kostet nichts",
       h2: { pre: "Lasst uns über euer", accent: "Marketing", post: "sprechen." },
-      p: "30 Minuten reichen, um zu sehen, wo der größte Hebel liegt: In der Botschaft, im Funnel oder im Prozess. Pragmatisch und ohne unnötige Komplexität.",
+      p: "30 Minuten reichen, um zu sehen, wo der größte Hebel liegt: In der Botschaft, in den Abläufen oder in der Auswertung. Pragmatisch und ohne unnötige Komplexität.",
       button: "Termin vereinbaren",
     },
   },
@@ -71,14 +67,14 @@ export const de = {
     meta: {
       title: "Über mich | Stephanie Wieck",
       description:
-        "Über 15 Jahre Marketing und Kommunikation: Positionierung und Botschaft, Content und Media Relations, Performance-Kampagnen und Reporting.",
+        "Über 15 Jahre Marketing und Kommunikation: Positionierung und Botschaft, Content und Media Relations, Kampagnen und Auswertung.",
       ogDescription:
-        "Marketing- und Kommunikationsstrategin: von der Botschaft über Content und Media Relations bis zur datengetriebenen Kampagne.",
+        "Marketing- und Kommunikationsstrategin: von der Botschaft über Content und Media Relations bis zur Auswertung der Kampagne.",
     },
     eyebrow: "Über mich",
     h1: { pre: "Strategisch denken.", accent: "Hands‑on", post: "umsetzen." },
-    p1: "Es gibt Menschen, die starke Botschaften entwickeln. Und Menschen, die Tracking mit Dashboard aufsetzen. Ich mache seit über 15 Jahren beides und habe gelernt: Das Ergebnis stimmt erst, wenn Botschaft und Messbarkeit zusammen gedacht werden.",
-    p2: "Mein Fokus liegt auf Positionierung und Botschaft, auf Content und Media Relations sowie auf datengetriebenen Kampagnen. Wo es sinnvoll ist, baue ich Abläufe, die uns im Team Arbeit abnehmen.",
+    p1: "Seit über 15 Jahren arbeite ich an beidem: an der Botschaft und daran, ob sie ankommt. Meine Erfahrung ist, dass das eine ohne das andere selten funktioniert.",
+    p2: "Mein Fokus liegt auf Positionierung und Botschaft, auf Content und Media Relations sowie auf Kampagnen und deren Auswertung. Wo es sinnvoll ist, baue ich Abläufe, die uns im Team Arbeit abnehmen.",
     p3: {
       pre: "Weitere Informationen zu meiner über 15‑jährigen Erfahrung in Management und Marketing findest du in meinem",
       link: "LinkedIn-Profil",
@@ -97,8 +93,8 @@ export const de = {
       },
       {
         k: "03",
-        t: "Enablement",
-        d: "Workshops und Begleitung, damit Prozesse kein Nebenprojekt bleiben, sondern Teil des Alltags werden.",
+        t: "Übergabe",
+        d: "Dokumentation und Einarbeitung, damit die Arbeit weiterläuft, wenn mein Mandat endet.",
       },
     ],
     ctaH2: "Lass uns über Marketing und Kommunikation sprechen.",

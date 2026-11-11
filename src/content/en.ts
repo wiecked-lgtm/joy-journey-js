@@ -111,6 +111,8 @@ export const en: Content = {
     linkedinLabel: "LinkedIn",
     callLabel: "Initial Consultation",
     callText: "30 minutes, free of charge and with no obligation.",
+    bookingEyebrow: "Schedule an appointment",
+    bookingTitle: "Pick a date that works for you.",
     button: "Schedule an appointment via Calendly",
   },
 

@@ -118,6 +118,8 @@ export const de = {
     linkedinLabel: "LinkedIn",
     callLabel: "Erstgespräch",
     callText: "30 Minuten, kostenlos und unverbindlich.",
+    bookingEyebrow: "Termin buchen",
+    bookingTitle: "Such dir einen Termin aus, der dir passt.",
     button: "Termin über Calendly buchen",
   },
 

@@ -1,6 +1,7 @@
 import { Mail, Linkedin, Calendar, ArrowRight } from "lucide-react";
 
 import { content, type Lang } from "../../content";
+import { CalendlyEmbed } from "../calendly-embed";
 
 // ===========================================================================
 // KONTAKT
@@ -88,16 +89,31 @@ export function ContactPage({ lang }: { lang: Lang }) {
               </div>
             </div>
 
+            {/*
+              Fuehrt nicht mehr zu calendly.com, sondern zum Buchungsfenster
+              weiter unten auf dieser Seite. Nur so bleibt die Buchung messbar.
+            */}
             <a
-              href="https://calendly.com/stephanie-wieck/"
-              target="_blank"
-              rel="noreferrer"
+              href="#termin"
               className="group mt-10 inline-flex w-full items-center justify-center gap-2 rounded-full bg-ink px-5 py-3.5 text-sm text-cream transition hover:bg-ink/90"
             >
               {t.button}
               <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
             </a>
           </div>
+        </div>
+      </div>
+
+      {/* BUCHUNGSFENSTER */}
+      <div id="termin" className="container-prose scroll-mt-24 pb-24 md:pb-32">
+        <div className="text-xs uppercase tracking-[0.22em] text-muted-foreground">
+          {t.bookingEyebrow}
+        </div>
+        <h2 className="mt-6 max-w-2xl font-display text-3xl leading-tight text-ink md:text-4xl">
+          {t.bookingTitle}
+        </h2>
+        <div className="mt-10 overflow-hidden rounded-2xl border border-border bg-card">
+          <CalendlyEmbed />
         </div>
       </div>
     </section>
